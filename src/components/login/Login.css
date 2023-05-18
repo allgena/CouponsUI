@@ -1,0 +1,52 @@
+.Login {
+
+        padding: 40px;
+        text-align: center;
+        width:40%;
+              margin:auto;
+              max-width:200px;
+              min-height:100px;
+              position:relative;
+        background-color: rgba(9, 150, 185, 0.534);
+        box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 
+      }
+      
+      h3 {
+        margin-top: -5px;
+        margin-inline: 10px;
+        font-size: 24px;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(10, 10, 241);
+        text-shadow: 1px 1px;
+      }
+      
+      span {
+        font-size: 14px;
+        font-style: oblique;
+        font-weight: 500;
+        color: rgb(206, 14, 206);
+        text-decoration: underline;
+      }
+      
+      p {
+       
+        font-size: 11px;
+      }
+      
+      input[type="button"]{
+        background-color: rgb(67, 112, 236);
+        border-radius: 5px;
+        min-width: 100px;
+      }
+      input[type="text" i]{
+        margin-bottom: 7px ;
+       
+      }
+      .chek>p{
+        margin-top:  -19px; ;
+        margin-left: -25px;
+      }
+      .chek>input{
+        margin-right: 160px;
+        margin-top: 10px;
+      }
