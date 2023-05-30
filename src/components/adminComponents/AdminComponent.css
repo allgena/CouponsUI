@@ -1,5 +1,43 @@
-.admin-page
-        h1{
-        color: green;
-        font-size: 40px;
+
+
+
+.admin-page{
+        padding-top: 10px;
+        display: flex;
+        /* justify-content: space-between; */
+        justify-items: left;
+      
+}
+
+.admin-page >h4{
+       
+        margin-left: 250px;
+        color: red;
+
+}
+
+.sections-buttons{
+      margin-top: 0px;
+      margin-left: 90px;
+      display: flex;
+      align-items:center;
+    
+     }
+
+
+.sections-buttons [ type="button"]{
+        display: flex;
+        display: inline-block;
+        border-radius: 20px;
+        padding: 5px 20px;
+       
+        margin-right: 20px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 00ms ease;
+  
+}
+.sections-buttons :hover {
+        color: red;
+        transform: scale(1.1);
 }

@@ -1,0 +1,85 @@
+.components {
+        /* display: inline-flex; */
+        display: flex;
+        justify-content: space-between;
+        /* background: rgba(128, 128, 128, 0.664); */
+        /* background-image: url(../../../../public/img/fon5-header.jpg); */
+        color: black;
+        font-weight: 600;
+}
+.components >.logo{
+        padding: 6px;
+        margin-left: 0px;
+        font-weight: bolder;
+        font-size: 45px;
+        /* color: transparent;  */
+        text-decoration: underline;
+        color: transparent; 										
+	background-color: wheat;
+		   -webkit-background-clip: text;
+		   -moz-background-clip: text;
+		   background-clip: text;
+		   text-shadow: rgba(255,255,255,0.5) 2px 2px 3px;
+                   
+            
+}
+ 
+
+
+.categories{
+
+        font-size: 15px;
+        margin-left: 30px;
+}
+
+
+ .loginButton {
+
+        text-align: right;
+        margin-right: 40px;
+        margin-top: 15px;
+        cursor: pointer;
+} 
+
+.loginButton>input[type="button"]:hover {
+
+        transition: all 300ms ease;
+        transform: scale(1.1);
+}
+
+.loginButton [type="button"]  
+
+ {
+        /* background-color: rgb(24, 148, 20); */
+        border-radius: 10px;
+        min-width: 100px;
+    background-color: #ddd2d2;
+        margin-right: 35px;
+        cursor: pointer;
+       }
+
+.categories {
+
+        display: inline-block;
+        margin-left: 130px;
+        margin-top: 20px;
+}
+
+.categories div {
+        display: inline-block;
+        background: #ddd2d2;
+       
+        border-radius: 20px;
+        padding: 5px 20px;
+
+        margin-right: 20px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 00ms ease;
+
+}
+
+.categories div:hover {
+        border-color: silver;
+        transform: scale(1.1);
+}

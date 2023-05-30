@@ -1,0 +1,41 @@
+
+
+
+
+.admin-table {
+  display: inline;
+  border: 2px solid wheat;
+  padding-top: 8px;
+ }
+
+th,
+td {
+  border: 1px solid wheat;
+  padding: 3px 40px;
+  color: white;
+  
+}
+
+
+
+.cards-container {
+  display: inline;
+  height: 100%;
+  font-weight: 500;
+  /* margin: -15px; */
+  margin-top: 20px 20px; 
+}
+
+.cards-container >.h4 {
+  font-size: 20px;
+  text-align: center;
+
+
+
+}
+
+.search {
+  margin: auto;
+  margin-bottom: 10px;
+
+}

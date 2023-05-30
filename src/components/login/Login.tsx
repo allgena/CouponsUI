@@ -3,13 +3,14 @@ import axios from "axios";
 import "../login/Login.css";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-
 import ISuccessfulLoginData from "../models/ISuccessFulLoginData";
+import { useDispatch } from "react-redux";
 
 function Login() {
   let [userName, setUserName] = useState("");
   let [password, setPassword] = useState("");
   const navigate = useNavigate();
+  let dispatch=useDispatch();
 
   async function onLogin() {
     try {
@@ -18,17 +19,23 @@ function Login() {
         password,
       });
       let token: string = response.data;
+
       let decodedToken: any = jwt_decode(token);
+
       let strSuccessfulLoginResponse: string = decodedToken.sub;
+
       let successfulLoginResponse: ISuccessfulLoginData = JSON.parse(
         strSuccessfulLoginResponse
       );
+
       console.log("Decoded: ", successfulLoginResponse);
 
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`; //serverResponse.token
+
       if (successfulLoginResponse.userType === "CUSTOMER") {
-        navigate("/customer");
-      } else if (successfulLoginResponse.userType === "CONPANY") {
-        navigate("/conpany");
+        navigate("/coupons");
+      } else if (successfulLoginResponse.userType === "COMPANY") {
+        navigate("/company");
       } else if (successfulLoginResponse.userType === "ADMIN") {
         navigate("/admin");
       }
@@ -44,7 +51,9 @@ function Login() {
 
   return (
     <body>
+     <div className="presentation">
       <div className="Login">
+        
         <h3>Sign In</h3>
         <div className="#">
           <input
@@ -69,12 +78,16 @@ function Login() {
           <br />
         </div>
         <p>
-          Not a member? <span className="sign up">Sing Up</span>
+          Not a member? <a id='sign-up' href="http://localhost:3000/register">Sign Up</a>
         </p>
         <br />
       </div>
+      </div>
+     
     </body>
   );
 }
 
 export default Login;
+
+

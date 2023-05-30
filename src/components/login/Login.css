@@ -1,52 +1,70 @@
-.Login {
+.Login  {
+  
+  padding: 30px;
+  text-align: center;
+  width: 30%;
+  margin-top: 5%;
+  max-width: 200px;
+  min-height: 100px;
+  position: relative;
+  background-color: rgba(9, 150, 185, 0.815);
+  border-radius: 20px;
+  box-shadow: 12px 12px 12px 0 rgba(0, 0, 0, .1), 0 17px 50px 0
 
-        padding: 40px;
-        text-align: center;
-        width:40%;
-              margin:auto;
-              max-width:200px;
-              min-height:100px;
-              position:relative;
-        background-color: rgba(9, 150, 185, 0.534);
-        box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 
-      }
-      
-      h3 {
-        margin-top: -5px;
-        margin-inline: 10px;
-        font-size: 24px;
-        font-family: 'Times New Roman', Times, serif;
-        color: rgb(10, 10, 241);
-        text-shadow: 1px 1px;
-      }
-      
-      span {
-        font-size: 14px;
-        font-style: oblique;
-        font-weight: 500;
-        color: rgb(206, 14, 206);
-        text-decoration: underline;
-      }
-      
-      p {
-       
-        font-size: 11px;
-      }
-      
-      input[type="button"]{
-        background-color: rgb(67, 112, 236);
-        border-radius: 5px;
-        min-width: 100px;
-      }
-      input[type="text" i]{
-        margin-bottom: 7px ;
-       
-      }
-      .chek>p{
-        margin-top:  -19px; ;
-        margin-left: -25px;
-      }
-      .chek>input{
-        margin-right: 160px;
-        margin-top: 10px;
-      }
+ 
+}
+
+h3 {
+ 
+  margin-inline: 10px;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(10, 10, 241);
+  text-shadow: 1px 1px;
+}
+
+a {
+  font-size: 14px;
+  font-style: oblique;
+  font-weight: 500;
+  color: rgb(206, 14, 206);
+  text-decoration: underline;
+ 
+}
+
+
+input[type="button"]{
+  /* background-color: rgba(70, 115, 240, 0.767); */
+  border-radius: 10px;
+  min-width: 100px;
+  cursor:pointer;
+  margin-top: 10px;
+
+}
+
+input[type="text" i] {
+  margin-bottom: 7px;
+ 
+
+}
+
+.chek>p {
+  margin-top: -15px;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: -19px;
+}
+
+input[type="checkbox"] {
+  margin-right: 120px;
+
+}
+
+.presentation div{
+  display:inline-block;
+}
+
+
+
+
+ 
