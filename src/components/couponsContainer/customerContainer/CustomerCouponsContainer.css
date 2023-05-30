@@ -1,0 +1,64 @@
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.coupons-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px ;
+  margin-bottom: 20px;
+}
+
+.pagination-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pagination-button {
+  background: white;
+  color: black;
+  padding: 2px 15px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-container h5 {
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .coupons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .coupons-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .coupons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .coupons-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .coupons-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+

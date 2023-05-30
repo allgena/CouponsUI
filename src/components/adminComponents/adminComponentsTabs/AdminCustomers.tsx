@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ActionType } from "../redux/action-type";
-import { AppState } from "../redux/app-state";
-
+import { ActionType } from "../../redux/action-type";
+import { AppState } from "../../redux/app-state";
 import "./AdminTab.css";
-import Search from "../search/Search";
-import AdminComponent from "../adminComponents/AdminComponent";
+import AdminComponent from "../AdminComponent";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 function AdminCustomers() {
   let [pageNumber, setPageNumber] = useState(1);
@@ -16,6 +17,7 @@ function AdminCustomers() {
   useEffect(() => {
     getAllCustomers(pageNumber, amountPerPage);
   }, [pageNumber]);
+
   let customers = useSelector((state: AppState) => state.customers);
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
@@ -24,7 +26,6 @@ function AdminCustomers() {
   async function getAllCustomers(pageNumber: number, amountPerPage: number) {
     let url = `http://localhost:8080/customers/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
 
-    // let url = `http://localhost:8080/customers`;
     let response = await axios.get(url);
     let customersArray = response.data;
     dispatch({
@@ -49,33 +50,33 @@ function AdminCustomers() {
   }
   return (
     <div className="cards-container">
-      <AdminComponent/>
-       <div className="search">
-        <h4>Customers</h4>
-        <Search />
-      </div>
+      <AdminComponent />
+      <h3>Customers</h3>
       <table className="admin-table">
         <thead>
           <tr>
+            <th>id</th>
             <th>name</th>
             <th>phoneNumber</th>
             <th>address</th>
-            {/* <th>userId</th> */}
-            <th>id</th>
             <th># Purchases</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {customers
-            .filter((customer) => customer.address.includes(subText))
+            .filter((customer) => customer.customerName.includes(subText))
             .map((customer, index) => (
               <tr>
+                <td>{customer.customerId}</td>
                 <td>{customer.customerName}</td>
                 <td>{customer.phoneNumber}</td>
                 <td>{customer.address}</td>
-                {/* <td>{customer.userId}</td>  */}
-                <td>{customer.customerId}</td>
+                
                 <td>{customer.amountOfPurchases}</td>
+                <th><EditIcon/></th>
+            <th><DeleteForeverIcon/></th>
               </tr>
             ))}
         </tbody>
@@ -93,7 +94,7 @@ function AdminCustomers() {
           value="next"
           onClick={() => onNextClicked()}
         />
-        <p>Page: {pageNumber}</p>
+        <h5>Page: {pageNumber}</h5>
       </div>
     </div>
   );

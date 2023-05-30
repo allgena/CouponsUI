@@ -8,19 +8,15 @@
   min-height: 200px;
   position: relative;
   background-color: rgba(9, 150, 185, 0.815);
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0;
+  box-shadow: 10px 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0;
   border-radius: 20px;
 }
 
 .text {
 margin-top: 1%;
-margin-bottom: 16%;
+margin-bottom: 15%;
 
 }
-/* .presentation {
-     display: inline-block;
- 
-}  */
 
 
 

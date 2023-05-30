@@ -1,19 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ActionType } from "../redux/action-type";
-import { AppState } from "../redux/app-state";
-import Search from "../search/Search";
+import { ActionType } from "../../redux/action-type";
+import { AppState } from "../../redux/app-state";
 import "./AdminTab.css";
-import AdminComponent from "../adminComponents/AdminComponent";
+import AdminComponent from "../AdminComponent";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+
+
 
 function AdminUsers() {
   let [pageNumber, setPageNumber] = useState(1);
-  let amountPerPage: number = 12;
+  let amountPerPage: number = 10;
   let dispatch = useDispatch();
+
   useEffect(() => {
     getAllUsers(pageNumber, amountPerPage);
   }, [pageNumber]);
+
   let users = useSelector((state: AppState) => state.users);
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
@@ -21,11 +26,24 @@ function AdminUsers() {
 
   async function getAllUsers(pageNumber: number, amountPerPage: number) {
     let url = `http://localhost:8080/users/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
-    // let url = `http://localhost:8080/users`;
     let response = await axios.get(url);
     let userArray = response.data;
 
     dispatch({ type: ActionType.GetUsers, payload: { users: userArray } });
+  }
+
+
+  function onDeleteClicked(userId: number) {
+    // Make an API request to delete the user
+    axios
+      .delete(`http://localhost:8080/users/${userId}`)
+      .then(() => {
+        getAllUsers(pageNumber, amountPerPage); 
+        alert("User deleted successfully!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
   function isSubtextNull() {
     subText = subText.trim();
@@ -46,33 +64,35 @@ function AdminUsers() {
 
   return (
     <div className="cards-container">
-
-      <AdminComponent/>
-      <div className="search">
-        <h4>Users</h4>
-        <Search />
-      </div>
+      <AdminComponent />
+      <h3>Users</h3>
       <table className="admin-table">
         <thead>
           <tr>
-            <th>id</th>
+            <th>#</th>
+          
             <th>User Name</th>
             <th>Phone Num</th>
             <th>User Type</th>
             <th>Company Name</th>
+            <th>Edit</th>
+                <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {users
-            .filter((users: any) => users.userName.includes(subText))
-            .map((user, index) => (
-              <tr>
+            .filter((user) => user.userName.includes(subText))
+            .map((user,index) => (
+              <tr key={user.userId}>
+             
                 <td>{user.userId}</td>
                 <td>{user.userName}</td>
                 <td>{user.phoneNumber}</td>
                 <td>{user.userType}</td>
                 <td>{user.companyName}</td>
-                {/* <td><input type="button" value="Delete" onClick={()=>DeleteUser(user.id)}/></td> */}
+                <td><EditIcon/></td>
+            <td><DeleteForeverIcon onClick={() => onDeleteClicked(user.userId)}/></td>
+                
               </tr>
             ))}
         </tbody>
@@ -90,7 +110,7 @@ function AdminUsers() {
           value="next"
           onClick={() => onNextClicked()}
         />
-        <p>Page: {pageNumber}</p>
+        <h5>Page: {pageNumber}</h5>
       </div>
     </div>
   );

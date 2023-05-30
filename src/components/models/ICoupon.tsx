@@ -1,5 +1,5 @@
 export default interface ICoupon {
-  id: number;
+  couponId: number;
   couponName: string;
   price: number;
   description: string;
@@ -7,4 +7,5 @@ export default interface ICoupon {
   endDate: any;
   category: string;
   companyName: string;
+  imageURL: string;
 }

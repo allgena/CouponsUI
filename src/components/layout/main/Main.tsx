@@ -1,22 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminComponent from "../../adminComponents/AdminComponent";
-import "../main/Main.css";
-import CustomerCouponsContainer from "../../coupons/CustomerCouponsContainer";
-import Register from "../../create/Register";
-import Login from "../../login/Login";
 
-import Header from "../header/Header";
-import AdminCouponsTab from "../../adminComponentsTabs/AdminCoupons";
-import AdminCoupons from "../../adminComponentsTabs/AdminCoupons";
-import AdminCustomers from "../../adminComponentsTabs/AdminCustomers";
-import Home from "../../home/Home";
+import "../main/Main.css";
+
 
 function Main() {
   return (
-    
-    <div className="components">
+    <div className="main">
 
-<Home/>
     </div>
   );
 }

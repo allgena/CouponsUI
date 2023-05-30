@@ -11,7 +11,7 @@
 
 .admin-page >h4{
        
-        margin-left: 250px;
+        margin-left: 200px;
         color: red;
 
 }
@@ -30,7 +30,7 @@
         display: inline-block;
         border-radius: 20px;
         padding: 5px 20px;
-       
+      
         margin-right: 20px;
         cursor: pointer;
         border: 1px solid transparent;
@@ -40,4 +40,8 @@
 .sections-buttons :hover {
         color: red;
         transform: scale(1.1);
+}
+
+.admin-page >h4{
+        font-size: 18px;
 }

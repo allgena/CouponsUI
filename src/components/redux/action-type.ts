@@ -16,4 +16,14 @@ export enum ActionType {
   Customers,
   GetCustomers,
   getCouponsByPage,
+  GetSingleCoupon,
+  UpdateCoupon,
+  GetCouponById,
+  GetAllCoupons,
+  SetUserDetails,
+  AddToPurchases,
+  GetCoupon,
+  SetUserLogin,
+  DeleteCompany,
+  SelectedCategory
 }

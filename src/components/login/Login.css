@@ -34,7 +34,7 @@ a {
 
 
 input[type="button"]{
-  /* background-color: rgba(70, 115, 240, 0.767); */
+
   border-radius: 10px;
   min-width: 100px;
   cursor:pointer;
@@ -62,9 +62,175 @@ input[type="checkbox"] {
 
 .presentation div{
   display:inline-block;
+} 
+
+
+ .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-content .chek {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-content .login.button {
+  text-align: center;
+}
+
+.modal-content .login.button input[type="button"] {
+  padding: 8px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content p {
+  margin-bottom: 0;
+}
+
+.modal-content #sign-up {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal-content button {
+  padding: 8px 20px;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+ 
+
+
+.components {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-weight: 600;
+}
+
+.components > .logo > a {
+  padding: 8px;
+  margin-left: 60px;
+  font-weight: bolder;
+  font-size: 55px;
+  color: transparent;
+  text-decoration: underline;
+  background-color: wheat;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: rgba(255, 255, 255, 0.5) 2px 2px 3px;
+}
+
+.components > .search {
+  margin-top: 25px;
+}
+
+.categories {
+  font-size: 15px;
+  margin-left: 30px;
+  display: inline-block;
+  margin-right: 110px;
+  margin-top: 22px;
+}
+
+.categories div {
+  display: inline-block;
+  background: #ddd2d2;
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 300ms ease;
+}
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+.loginButton {
+  text-align: right;
+  margin-right: 80px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.loginButton > input[type="button"] {
+  background: rgba(9, 150, 185, 1);
+  border-radius: 10px;
+  min-width: 100px;
+  margin-right: 55px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.loginButton > input[type="button"]:hover {
+  transition: all 300ms ease;
+  transform: scale(1.1);
+}
+
+.userName {
+  margin-top: 28px;
+  margin-right: 40px;
+  color: wheat;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 
 
-
- 

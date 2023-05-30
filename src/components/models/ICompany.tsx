@@ -1,4 +1,5 @@
 export default interface ICompany {
+
   companyId: number;
   companyName: string;
   address: string;

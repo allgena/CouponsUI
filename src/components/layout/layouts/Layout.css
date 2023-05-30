@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 10% 85% 5%;
-  /* background-image: url("../../../../public/img/fon5.jpg"); */
+  
   
 }
 
@@ -17,14 +17,10 @@
 
 .layout>header {
   grid-column: span 12;
-  /* background-color: rgba(128, 128, 128, 0.664); */
+ 
   background-image: url(../../../../public/img/fon5-header.jpg);
 }
 
-/* .layout>aside {
-        grid-column: span 2;
-        background-color: rgb(205, 164, 50);
-      } */
 
 .layout>main {
   grid-column: span 12;
@@ -34,7 +30,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  
-
-
 }
+
+
+

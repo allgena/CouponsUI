@@ -1,43 +1,17 @@
-
-
-
-.wrapper  {
-  padding: 50px 20 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.services {
-  width: auto;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 45px auto 20px;
-}
-
 .single-img {
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column-reverse;
-  flex-wrap: nowrap;
-  width: 230px;
-  height: 400px;
+  flex-wrap: wrap;
+  width: 220px;
+  height: 250px;
   overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
   transform: translate(0, 0);
-  transition: .3s;
-}
-
-.single-img:hover {
-  transform: translate(0, -15px);
+  transition: .5s;
 }
 
 .img-one {
-  background-image: url(/public/img/electro2.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -47,17 +21,17 @@ h4 {
 }
 
 .img-text {
-  background: linear-gradient(to top, rgba(255, 255, 255, 2), rgba(255, 255, 255, 0.8));
-  padding: 0 10px 5px 10px;
+  margin-left: -10px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 2), rgba(255, 255, 255, 1));
+  padding: 0 5px 10px 10px;
   width: 100%;
   height: auto;
   position: relative;
   transform: translate(0, 220px);
-  line-height: 25px;
-  transition: 0.7s ease;
+  line-height: 20px;
+  transition: 0.5s ease;
   display: inline-block;
   text-align: center;
-  /* color: #fff; */
   color: bisque;
 }
 
@@ -65,24 +39,26 @@ p {
   font-size: 16px;
   color: black;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .img-text h4 {
-  line-height: 15px;
+  line-height: 5px;
   padding: 0;
-  margin: 16px 0;
-  /* font-family: 'Alfa Slab One', cursive; */
-  font-size: 25px;
+  margin: 15px 0;
+  font-size: 22px;
 }
+
 
 .services button {
   background: blue;
   color: #fff;
-  padding: 5px 25px;
+  padding: 5px 10px;
   border: none;
-  border-radius: 50px;
+  border-radius: 5px;
   line-height: 14px;
-  display: inline-block;
+  display: inline-flex;
+  margin-left: 5px;
   margin-bottom: 10px;
 }
 
@@ -90,75 +66,11 @@ p {
   transform: translate(0, 0);
 }
 
-@media (max-width: 991px) {
-  .wrapper {
-    padding: 0;
-  }
-
-  .services {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* a{
-      margin-bottom: 35px;
-  } */
-}
 
 
 
 
 
 
-/* @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Assistant&family=McLaren&family=Montserrat&family=Teko&display=swap");
-
-.CouponComponent {
-  width: 200px;
- 
-  background-color: #fff;
-  margin: 20px;
-  padding: 8px;
-
-  box-shadow: 0 2px 5px #08a71d;
-  border-radius: 15px;
-  text-align: left;
-
-}
 
 
-
-.CouponComponent h2 {
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-}
-
-.coupon-details p {
-  font-size: 1.2em;
-  margin-bottom: 3px;
-}
-
-.coupon-details {
-  margin: 10px;
-  width: 100%;
-}
-
-.add-to-basket {
-  width: 100%;
-  text-align: center;
-}
-
-.button-add-to-basket {
-  width: 90px;
-  margin-bottom: 10px;
-  background-color: aquamarine;
- 
-  border-radius: 10px;
-  font-size: 12px;
-}
-
-.button-add-to-basket:hover {
-  background-color: aqua;
-  cursor: pointer;
-} */

@@ -9,10 +9,20 @@ export function reduce(
 ): AppState {
   const newAppState = { ...oldAppState };
 
+
   switch (action.type) {
+    
     case ActionType.GetCoupons:
       newAppState.coupons = action.payload.coupons;
       break;
+
+      case ActionType.SelectedCategory:
+      newAppState.selectedCategory = action.payload.selectedCategory;
+      break;
+
+      case ActionType.GetCoupon:
+        newAppState.coupon=action.payload.coupon;
+        break;
 
     case ActionType.GetUsers:
       newAppState.users = action.payload.users;
@@ -31,17 +41,18 @@ export function reduce(
       break;
 
     case ActionType.LogInData:
-      newAppState.logInData = action.payload.logInData;
+      newAppState.logInData = action.payload.successfulLoginData;
       break;
 
+     
     case ActionType.ChangeCouponProps:
       let couponId = action.payload.couponId;
       let coupon = newAppState.coupons.find(
-        (coupon) => coupon.id == couponId
+        (coupon) => coupon.couponId === couponId
       ) as ICoupon;
       coupon.couponName = "";
       coupon.category = "";
-      coupon.description = "";
+      coupon.description = ""; 
       coupon.price = +"";
       coupon.startDate = "";
       coupon.endDate = "";
@@ -52,6 +63,24 @@ export function reduce(
     case ActionType.SearchValue:
       newAppState.searchValue = action.payload.searchValue;
       break;
+
+    case ActionType.DeleteCoupon:
+      let id = action.payload.couponDeletedId;
+      let couponsArrayAfterDeletion = newAppState.coupons.filter((coupon) => {
+        return id !== coupon.couponId;
+      });
+      newAppState.coupons = couponsArrayAfterDeletion;
+      newAppState.coupons = [...newAppState.coupons];
+      break;
+
+      // case ActionType.DeleteCompany:
+      // let id = action.payload.companyDeletedId;
+      // let companiesArrayAfterDeletion = newAppState.coupons.filter((company) => {
+      //   return id !== company.companyId;
+      // });
+      // newAppState.companies = companiesArrayAfterDeletion;
+      // newAppState.companies = [...newAppState.companies];
+      // break;
   }
 
   return newAppState;

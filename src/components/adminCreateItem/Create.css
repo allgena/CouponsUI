@@ -1,0 +1,50 @@
+.coupon-creater {
+
+    text-align: center;
+}
+
+.company-creater h2 {
+    font-size: 20px;
+    color: wheat;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.coupon-creater h2 {
+    font-size: 20px;
+    color: wheat;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.coupon-creater label {
+
+    color: #eee;
+    font-size: 15px;
+}
+
+.coupon-creater .input  {
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    background-color: white;
+    width: 200px;
+    border-radius: 5px;
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    margin: 5px;
+}
+
+.coupon-creater .submit-coupon-button {
+    background-color: white;
+    border: 3px solid black;
+    padding: 10px 10px;
+    color: black;
+    border-radius: 12px;
+    width: 150px;
+    font-size: 18px;
+    transition-duration: 0.4s;
+}
+
+
