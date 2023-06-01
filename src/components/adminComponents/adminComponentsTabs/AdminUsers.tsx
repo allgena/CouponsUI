@@ -7,12 +7,14 @@ import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
+import IUser from "../../models/IUser";
+import { useNavigate } from "react-router-dom";
 
 function AdminUsers() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
-
+  let navigate = useNavigate();
   useEffect(() => {
     getAllUsers(pageNumber, amountPerPage);
   }, [pageNumber]);
@@ -61,6 +63,14 @@ function AdminUsers() {
     setPageNumber(pageNumber);
   }
 
+  function onUpdateUser(user: IUser): void {
+    dispatch({
+      type: ActionType.UpdateUser,
+      payload: { user: user },
+    });
+    navigate("/admin/update/user");
+  }
+
   return (
     <div className="cards-container">
       <AdminComponent />
@@ -89,7 +99,7 @@ function AdminUsers() {
                 <td>{user.userType}</td>
                 <td>{user.companyName}</td>
                 <td>
-                  <EditIcon />
+                <EditIcon onClick={() => onUpdateUser(user)}/>
                 </td>
                 <td>
                   <DeleteForeverIcon

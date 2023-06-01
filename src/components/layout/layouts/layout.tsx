@@ -19,6 +19,7 @@ import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
 import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";
 import CompanyCoupons from "../../companyComponents/CompanyCoupons";
+import SingleUser from "../../adminCreateItem/SingleUser";
 
 function Layout() {
   return (
@@ -51,6 +52,9 @@ function Layout() {
             <Route path="/company/create/coupons" element={<CompanyCouponManager couponId={0} couponName={""}
             price={0} description={""} startDate={undefined} endDate={undefined} category={""}
             companyName={""} imageURL={""} coupon={undefined}/>}/>
+            <Route path="/admin/update/user" element={<SingleUser userId={0} userName={""} userType={""} 
+            phoneNumber={""} companyName={""} />} />
+
           </Routes>
         </main>
 

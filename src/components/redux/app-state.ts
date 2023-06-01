@@ -17,7 +17,9 @@ export class AppState {
   public searchValue: string = "";
   public filterredCoupons: ICoupon[] = [];
   public users: IUser[] = [];
-  public userForUpdate={};
+  public userForUpdate:IUser ={
+    userId:0, userType:"", userName:"", companyName:"",  phoneNumber:""
+  };
   public filterredUsers: IUser[] = [];
   public userDetails: ISuccessfulLoginData = {
     id: 0, userType: "", userName: "",
