@@ -8,7 +8,7 @@ import AdminComponent from "../adminComponents/AdminComponent";
 import "./Create.css"
 
 
-function CouponManager(props: ICoupon) {
+function SingleCoupon(props: ICoupon) {
   
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
@@ -53,7 +53,7 @@ function CouponManager(props: ICoupon) {
   return (
     <div className="coupon-creater">
         <AdminComponent />
-      <h3>Create coupon</h3>
+      <h3>Update coupon</h3>
       <div className="inputs-container">
        
         <label htmlFor="name"> Coupon Name: </label>
@@ -159,4 +159,4 @@ function CouponManager(props: ICoupon) {
   );
 }
 
-export default CouponManager;
+export default SingleCoupon;

@@ -14,7 +14,7 @@ import AdminComponent from "../../adminComponents/AdminComponent";
 import Home from "../../home/Home";
 import CreateCompany from "../../adminComponents/adminComponentsTabs/CreateCompany";
 import CompanyManager from "../../adminComponents/adminComponentsTabs/CreateCompany";
-import CouponManager from "../../adminCreateItem/AdminCouponsManager";
+import SingleCoupon from "../../adminCreateItem/SingleCoupon";
 import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
 import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";
@@ -43,7 +43,7 @@ function Layout() {
             <Route path="/admin/companies" element={<AdminCompanies />} />
             <Route path="/admin/purchases" element={<AdminPurchases />} />
             <Route path="/admin/create/companies" element={<CompanyManager/>}/>
-            <Route path="/admin/create/coupons" element={<CouponManager couponId={0} couponName={""}
+            <Route path="/admin/create/coupons" element={<SingleCoupon couponId={0} couponName={""}
             price={0} description={""} startDate={undefined} endDate={undefined} category={""}
             companyName={""} imageURL={""} coupon={undefined}/>}/>
             <Route path="/company/coupons" element={<CompanyCoupons />} />

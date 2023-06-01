@@ -25,5 +25,6 @@ export enum ActionType {
   GetCoupon,
   SetUserLogin,
   DeleteCompany,
-  SelectedCategory
+  SelectedCategory,
+  UpdateUser
 }

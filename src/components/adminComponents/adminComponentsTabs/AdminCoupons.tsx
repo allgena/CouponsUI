@@ -10,7 +10,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import ICoupon from "../../models/ICoupon";
 import { Navigate, useNavigate } from "react-router-dom";
-import CouponManager from "../../adminCreateItem/AdminCouponsManager";
+import SingleCoupon from "../../adminCreateItem/SingleCoupon";
 
 function AdminCoupons() {
   let [pageNumber, setPageNumber] = useState(1);

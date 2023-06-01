@@ -47,7 +47,7 @@ export function reduce(
      
     case ActionType.ChangeCouponProps:
       
-      let couponId = action.payload.coupon.couponId;
+      // let couponId = action.payload.coupon.couponId;
      
       // let coupon = newAppState.coupons.find(
       //   (coupon) => coupon.couponId === couponId
@@ -62,7 +62,11 @@ export function reduce(
 
       newAppState.coupon = action.payload.coupon;
       break;
-
+    
+    case ActionType.UpdateUser:
+      newAppState.userForUpdate = action.payload.user;
+      break;
+      
     case ActionType.SearchValue:
       newAppState.searchValue = action.payload.searchValue;
       break;
