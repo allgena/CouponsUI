@@ -8,11 +8,15 @@ import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
+import ICoupon from "../../models/ICoupon";
+import { Navigate, useNavigate } from "react-router-dom";
+import CouponManager from "../../adminCreateItem/AdminCouponsManager";
 
 function AdminCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getAllCoupons(pageNumber, amountPerPage);
@@ -54,25 +58,33 @@ function AdminCoupons() {
       return true;
     }
   }
-  // async function onUpdateCoupon(event: any) {
-  //   try {
-  //     const response = await axios.put("http://localhost:8080/coupons", {
-  //       couponId,
-  //       couponName,
-  //       price,
-  //       description,
-  //       startDate,
-  //       endDate,
-  //       category,
-  //       companyName,
-  //       imageURL,
-  //     });
-  //     console.log(response);
-  //     alert("Coupon updated");
-  //   } catch (e) {
-  //     alert(e);
-  //     console.error(e);
-  //   }
+  async function onUpdateCoupon(coupon: ICoupon) {
+    dispatch({
+      type: ActionType.ChangeCouponProps,
+      payload: { coupon: coupon },
+    });
+    navigate("/admin/create/coupons");
+    
+    // try {
+    //   const response = await axios.put("http://localhost:8080/coupons", {
+    //     couponId: coupon.couponId,
+    //     couponName: coupon.couponName,
+    //     price: coupon.price,
+    //     description: coupon.description,
+    //     startDate: coupon.startDate,
+    //     endDate: coupon.endDate,
+    //     category: coupon.category,
+    //     companyName: coupon.companyName,
+    //     imageURL: coupon.imageURL,
+    //   });
+    //   console.log(response);
+    //   alert("Coupon updated");
+    // } catch (e) {
+    //   alert(e);
+    //   console.error(e);
+    // }
+  }
+
   function onNextClicked() {
     pageNumber++;
     setPageNumber(pageNumber);
@@ -112,7 +124,7 @@ function AdminCoupons() {
                 <td>{coupon.category}</td>
                 <td>{coupon.endDate}</td>
                 <td>
-                  {/* <EditIcon onClick={() => onUpdateCoupon(coupon.couponId)}/> */}
+                  <EditIcon onClick={() => onUpdateCoupon(coupon)}/>
                 </td>
                 <td>
                   <DeleteForeverIcon onClick={() => onDeleteClicked(coupon.couponId)}/>

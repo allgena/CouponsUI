@@ -46,18 +46,21 @@ export function reduce(
 
      
     case ActionType.ChangeCouponProps:
-      let couponId = action.payload.couponId;
-      let coupon = newAppState.coupons.find(
-        (coupon) => coupon.couponId === couponId
-      ) as ICoupon;
-      coupon.couponName = "";
-      coupon.category = "";
-      coupon.description = ""; 
-      coupon.price = +"";
-      coupon.startDate = "";
-      coupon.endDate = "";
+      
+      let couponId = action.payload.coupon.couponId;
+     
+      // let coupon = newAppState.coupons.find(
+      //   (coupon) => coupon.couponId === couponId
+      // ) as ICoupon;
+      // coupon.couponName = "";
+      // coupon.category = "";
+      // coupon.description = ""; 
+      // coupon.price = +"";
+      // coupon.startDate = "";
+      // coupon.endDate = "";
+      // coupon.imageURL = "";
 
-      newAppState.coupons = [...newAppState.coupons];
+      newAppState.coupon = action.payload.coupon;
       break;
 
     case ActionType.SearchValue:

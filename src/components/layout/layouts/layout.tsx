@@ -14,7 +14,7 @@ import AdminComponent from "../../adminComponents/AdminComponent";
 import Home from "../../home/Home";
 import CreateCompany from "../../adminComponents/adminComponentsTabs/CreateCompany";
 import CompanyManager from "../../adminComponents/adminComponentsTabs/CreateCompany";
-import CouponManager from "../../adminCreateItem/CreateCoupon";
+import CouponManager from "../../adminCreateItem/AdminCouponsManager";
 import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
 import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";

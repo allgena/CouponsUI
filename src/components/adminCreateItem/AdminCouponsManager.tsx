@@ -25,27 +25,7 @@ function CouponManager(props: ICoupon) {
 
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
-  async function onCreateCoupon(event: any) {
-    try {
-      const response = await axios.post("http://localhost:8080/coupons", {
-        couponName,
-        price,
-        description,
-        startDate,
-        endDate,
-        category,
-        companyName,
-        imageURL,
-      });
-      console.log(response);
-      alert("Coupon successfully created !");
-      navigate("/admin");
-    } catch (e) {
-      alert(e);
-      console.error(e);
-    }
-  }
-
+ 
   async function onUpdateCoupon(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/coupons", {
@@ -80,7 +60,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={props.couponName}
+          defaultValue={coupon.couponName}
           spellCheck="false"
           name="name"
           onChange={(event) => setName(event.target.value)}
@@ -90,7 +70,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={`${props.companyName}`}
+          defaultValue={`${coupon.companyName}`}
           spellCheck="false"
           name="companyId"
           onChange={(event) => setCompanyName(event.target.value)}
@@ -100,7 +80,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={`${props.price}`}
+          defaultValue={`${coupon.price}`}
           name="price"
           onChange={(event) => setPrice(+event.target.value)}
         />{" "}
@@ -109,7 +89,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={props.description}
+          defaultValue={coupon.description}
           spellCheck="false"
           name="description"
           onChange={(event) => setDescription(event.target.value)}
@@ -119,7 +99,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="date"
-          defaultValue={props.startDate}
+          defaultValue={coupon.startDate}
           name="startDate"
           onChange={(event) => setStartDate(event.target.value)}
         />{" "}
@@ -128,7 +108,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="date"
-          defaultValue={props.endDate}
+          defaultValue={coupon.endDate}
           name="endDate"
           onChange={(event) => setEndDate(event.target.value)}
         />{" "}
@@ -161,22 +141,16 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={`${props.imageURL}`}
+          defaultValue={`${coupon.imageURL}`}
           spellCheck="false"
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
          <br />
-        <input
+                <input
           className="submit-button"
           type="button"
-          value="Create"
-          onClick={onCreateCoupon}
-        />
-        <input
-          className="submit-button"
-          type="button"
-          value="Delete"
+          value="Update"
           onClick={onUpdateCoupon}
         />
         <br />
