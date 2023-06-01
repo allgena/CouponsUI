@@ -4,5 +4,6 @@ export default interface ICompany {
   companyName: string;
   address: string;
   phoneNumber: string;
+  couponName:string;
   numberOfPurchases: number;
 }

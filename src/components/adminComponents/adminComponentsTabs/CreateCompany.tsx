@@ -68,7 +68,7 @@ function CompanyManager() {
   return (
     <div className="company-creater">
       <AdminComponent />
-      <h3>Create Company</h3>
+      <h3>Create company</h3>
       <div className="inputs-container"> 
         {/* <input
           type="text"
@@ -120,7 +120,7 @@ function CompanyManager() {
         />{" "}
         <br /> */}
       </div>
-      {/* <button className="go-back" onClick={BackToAdminPage}>Back to Admin</button> */}
+  
     </div>
   );
 }

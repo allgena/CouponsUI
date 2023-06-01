@@ -50,6 +50,10 @@ function Header() {
   function onRegisterButtonClick() {
     navigate("/register");
   }
+  function setIsModalOpen(arg0: boolean): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className="components">
       <div className="logo"><a href="/">G.A.C.</a></div>
@@ -67,6 +71,7 @@ function Header() {
 
       <div className="loginButton">
         <input type="button" value="Login" onClick={onLoginButtonClick} />
+      
       </div>
       <div className="userName">
         <span> {useSelector((state: AppState) => state.logInData.userName)}</span>

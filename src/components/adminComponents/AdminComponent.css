@@ -4,14 +4,26 @@
 .admin-page{
         padding-top: 10px;
         display: flex;
-        /* justify-content: space-between; */
+        /* justify-content: space-around; */
         justify-items: left;
+        margin-left: 80px;
       
+}
+.company-page{
+        padding-top: 10px;
+        display: flex; 
+        justify-items: left;
+        margin-left: 250px;
+}
+.company-page >h4{
+        font-size: 20px;
+        margin-left: 130px;
+        color: red;
 }
 
 .admin-page >h4{
-       
-        margin-left: 200px;
+       font-size: 20px;
+        margin-left: 120px;
         color: red;
 
 }

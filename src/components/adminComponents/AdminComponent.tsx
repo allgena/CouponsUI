@@ -1,10 +1,9 @@
-import Search from "../search/Search";
-import { Route, useNavigate } from "react-router-dom";
+// import Search from "../search/Search";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 import "./AdminComponent.css";
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 
 function AdminComponent() {
   let coupons = useSelector((state: AppState) => state.coupons);
@@ -47,7 +46,7 @@ function AdminComponent() {
   }
 
   function onCreateCompanyClick() {
-    if (userType != "ADMIN") {
+    if (userType !== "ADMIN") {
       navigate("/login");
     } else navigate("/admin/create/companies");
   }
@@ -82,7 +81,7 @@ function AdminComponent() {
         />
         <input
           type="button"
-          value="Company Manager"
+          value="Create Company"
           onClick={onCreateCompanyClick}
         />
       </div>

@@ -55,7 +55,7 @@ function AdminCustomers() {
       <table className="admin-table">
         <thead>
           <tr>
-            <th>id</th>
+            <th>#</th>
             <th>name</th>
             <th>phoneNumber</th>
             <th>address</th>
@@ -68,8 +68,8 @@ function AdminCustomers() {
           {customers
             .filter((customer) => customer.customerName.includes(subText))
             .map((customer, index) => (
-              <tr>
-                <td>{customer.customerId}</td>
+              <tr key={customer.customerId}>
+                <td>{index+1}</td>
                 <td>{customer.customerName}</td>
                 <td>{customer.phoneNumber}</td>
                 <td>{customer.address}</td>

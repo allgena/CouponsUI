@@ -32,7 +32,9 @@ export class AppState {
     couponId: 0, couponName: "", category: "", companyName: "", price: 0,
     description: "", imageURL: "",
     startDate: undefined,
-    endDate: undefined
+    endDate: undefined,
+    coupon: undefined
   };
+  
   public selectedCategory: string = "All";
 }

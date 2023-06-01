@@ -33,31 +33,37 @@
   margin: 0 10px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .coupons-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
-@media (max-width: 400px) {
+@media (max-width: 404px) {
   .coupons-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 405px) and (max-width:799px){
   .coupons-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 800px) {
+@media (min-width:800px) and (max-width: 1023px) {
   .coupons-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1279px){
   .coupons-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width:1280px) {
+  .coupons-container {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

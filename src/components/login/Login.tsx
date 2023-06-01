@@ -108,27 +108,29 @@ export default Login;
 //       });
 //       let token = response.data.token;
 
-//       let decodedToken = jwt_decode(token);
+//       let decodedToken:any= jwt_decode(token);
 
-//       let strSuccessfulLoginResponse:string = decodedToken.sub;
+//       let strSuccessfulLoginResponse: string = decodedToken.sub;
 
 //       let successfulLoginResponse = JSON.parse(strSuccessfulLoginResponse);
+  
 //       dispatch({
-//         type: ActionType.LogInData,
-//         payload: { successfulLoginData: successfulLoginResponse },
-//       });
-//       console.log("Decoded: ", successfulLoginResponse);
-//       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-//       if (successfulLoginResponse.userType === "CUSTOMER") {
-//         navigate("/coupons");
-//       } else if (successfulLoginResponse.userType === "COMPANY") {
-//         navigate("/company");
-//       } else if (successfulLoginResponse.userType === "ADMIN") {
-//         navigate("/admin");
-//       }
-//       setIsModalOpen(false);
-//     } catch (e) {
+//                  type: ActionType.LogInData,
+//                  payload: { successfulLoginData: successfulLoginResponse },
+//                });
+//                console.log("Decoded: ", successfulLoginResponse);
+//                axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+//                if (successfulLoginResponse.userType === "CUSTOMER") {
+//                 navigate("/coupons");
+//                } else if (successfulLoginResponse.userType === "COMPANY") {
+//                  navigate("/company");
+//                } else if (successfulLoginResponse.userType === "ADMIN") {
+//                  navigate("/admin");
+//                }
+//       setIsModalOpen(true);
+//     } catch (e:any) {
 //       console.error(e);
+   
 //       if (e.response?.data?.error?.message) {
 //         alert(e.response.data.error.message);
 //       } else {

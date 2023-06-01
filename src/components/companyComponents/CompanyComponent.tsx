@@ -2,66 +2,82 @@ import Search from "../search/Search";
 import { Route, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
-import "./AdminComponent.css"
+import "../adminComponents/AdminComponent.css"
+import "./CompanyCouponManager";
+import "./CompanyCoupons"
+
+
 
 
 function CompanyComponent() {
   let coupons = useSelector((state: AppState) => state.coupons);
+  let userType = useSelector((state: AppState) => state.logInData.userType);  
+  let userCompanyName = useSelector((state: AppState) => state.logInData.companyName);
+
+
   let navigate = useNavigate();
+
+
   function onCouponsButtonClick() {
-    navigate("/admin/tab/coupons");
+    if (userType !== "COMPANY") {
+      navigate("/login");
+    } else navigate("/company/coupons");
   }
 
-  function onUsersButtonClick() {
-    navigate("/admin/tab/users");
-  }
-  function onCompaniesButtonClick() {
-    navigate("/admin/tab/companies");
-  }
+  
   function onCustomersButtonClick() {
-    navigate("/admin/tab/customers");
+    if (userType !== "COMPANY") {
+      navigate("/login");
+    } else navigate("/company/customers");
   }
   function onPurchasesButtonClick() {
-    navigate("/admin/tab/purchases");
+    if (userType !== "COMPANY") {
+      navigate("/login");
+    } else navigate("/company/purchases");
   }
 
-  function onCreateCouponClick(){
-    navigate("/admin/create/coupons")
+  function onCreateCouponClick() {
+    debugger;
+    if (userType !== "COMPANY") {
+      navigate("/login");
+    } else navigate("/company/create/coupons");
   }
 
-  function onCreateCompanyClick(){
-    navigate("/admin/create/companies")
-  }
+  // function onCreateCompanyClick() {
+  //   if (userType !== "COMPANY") {
+  //     navigate("/login");
+  //   } else navigate("/company/create/companies");
+  // }
 
   return (
-    <div className="admin-page">
-      <h4>Hello, ADMIN</h4>
+    <div className="company-page">
+      <h4>
+        Hello, {useSelector((state: AppState) => state.logInData.userName)  } { `from ${userCompanyName}`}
+      </h4>
       <div className="sections-buttons">
-      <input type="button" value="Create Coupon" onClick={onCreateCouponClick}/>
         <input type="button" value="Coupons" onClick={onCouponsButtonClick} />
-
-        <input type="button" value="Users" onClick={onUsersButtonClick} />
-        <input type="button" value="Create Company" onClick={onCreateCompanyClick}/>
-        <input
-          type="button"
-          value="Companies"
-          onClick={onCompaniesButtonClick}
-        />
-        <input
+        
+        {/* <input
           type="button"
           value="Customers"
           onClick={onCustomersButtonClick}
-        />
+        /> */}
         <input
           type="button"
           value="Purchases"
           onClick={onPurchasesButtonClick}
         />
-        
-       
+        <input
+          type="button"
+          value="Coupon Manager"
+          onClick={onCreateCouponClick}
+        />
+        {/* <input
+          type="button"
+          value="Company Manager"
+          onClick={onCreateCompanyClick}
+        /> */}
       </div>
-      
-      
     </div>
   );
 }

@@ -1,4 +1,5 @@
 export default interface ICoupon {
+  coupon: any;
   couponId: number;
   couponName: string;
   price: number;

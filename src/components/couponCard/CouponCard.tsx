@@ -71,7 +71,7 @@ function CouponCard(coupon: ICoupon) {
             <p>{coupon.category}</p>
             <p>{coupon.companyName}</p>
             <p>{coupon.description}</p>
-            <p>Price: {coupon.price}$</p>
+            <p>Price:{coupon.price}$</p>
             <p>Expiration: {coupon.endDate} </p>
 
             <div className="services-buttons">
@@ -82,7 +82,7 @@ function CouponCard(coupon: ICoupon) {
               )} */}
               
               {(userType == "CUSTOMER" || userType == "") && (
-                <div className="by-button">
+                <div className="by-Button">
                   <button onClick={() => addToPurcheses(coupon.couponId)}>
                     Buy now
                   </button>

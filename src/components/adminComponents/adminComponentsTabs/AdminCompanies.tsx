@@ -13,6 +13,7 @@ function AdminCompanies() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
+
   useEffect(() => {
     getCompanies();
   }, [pageNumber]);
@@ -40,6 +41,8 @@ function AdminCompanies() {
       return true;
     }
   }
+
+  
 
   async function deleteCompany(companyId: number) {
     try {
@@ -82,6 +85,7 @@ function AdminCompanies() {
           {companies
             .filter((company) => company.companyName.includes(subText))
             .map((company, index) => (
+              // <tr key={company.companyId}>
               <tr key={company.companyId}>
                 <td>{index + 1}</td>
                 <td>{company.companyName}</td>

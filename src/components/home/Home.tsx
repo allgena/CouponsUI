@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CustomerCouponsContainer from "../couponsContainer/customerContainer/CustomerCouponsContainer";
+import CustomerCouponsContainer from "../customerContainer/CustomerCouponsContainer";
 
 function Home() {
   const navigate = useNavigate();

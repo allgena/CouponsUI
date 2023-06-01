@@ -2,7 +2,8 @@ export default interface ISuccessfulLoginData{
        
         id:number;
         userName:string;
-        companyId:number;
+        companyId?:number;
+        companyName?:string;
         userType:string;
         
 }

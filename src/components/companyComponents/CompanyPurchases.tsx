@@ -1,15 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ActionType } from "../../redux/action-type";
-import { AppState } from "../../redux/app-state";
-import "./AdminTab.css";
-import AdminComponent from "../AdminComponent";
+
+import "../adminComponents/adminComponentsTabs/AdminTab.css";
+
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import AdminComponent from "../adminComponents/AdminComponent";
+import { ActionType } from "../redux/action-type";
+import { AppState } from "../redux/app-state";
+import CompanyComponent from "./CompanyComponent";
 
 
-function AdminPurchases() {
+function CompanyPurchases() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 12;
   let dispatch = useDispatch();
@@ -53,7 +56,7 @@ function AdminPurchases() {
 
   return (
     <div className="cards-container">
-      <AdminComponent />
+      <CompanyComponent />
       <h3>Purchases</h3>
       <table className="admin-table">
         <thead>
@@ -97,4 +100,4 @@ function AdminPurchases() {
     </div>
   );
 }
-export default AdminPurchases;
+export default CompanyPurchases;

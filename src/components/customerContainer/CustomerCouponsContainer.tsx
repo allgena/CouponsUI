@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ICoupon from "../../models/ICoupon";
-import { ActionType } from "../../redux/action-type";
-import { AppState } from "../../redux/app-state";
-import CouponComponent from "../../couponCard/CouponCard";
+import ICoupon from "../models/ICoupon";
+import { ActionType } from "../redux/action-type";
+import { AppState } from "../redux/app-state";
+import CouponComponent from "../couponCard/CouponCard";
 import "./CustomerCouponsContainer.css";
 
 
@@ -80,8 +80,7 @@ function CustomerCouponsContainer() {
             price={coupon.price}
             startDate={coupon.startDate}
             endDate={coupon.endDate}
-            imageURL={coupon.imageURL}
-          />
+            imageURL={coupon.imageURL} coupon={undefined}          />
         ))}
       </div>
       <div className="pagination-container">

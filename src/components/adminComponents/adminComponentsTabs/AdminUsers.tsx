@@ -5,10 +5,8 @@ import { ActionType } from "../../redux/action-type";
 import { AppState } from "../../redux/app-state";
 import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
-
-
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
 
 function AdminUsers() {
   let [pageNumber, setPageNumber] = useState(1);
@@ -33,12 +31,13 @@ function AdminUsers() {
   }
 
 
+
   function onDeleteClicked(userId: number) {
     // Make an API request to delete the user
     axios
       .delete(`http://localhost:8080/users/${userId}`)
       .then(() => {
-        getAllUsers(pageNumber, amountPerPage); 
+        getAllUsers(pageNumber, amountPerPage);
         alert("User deleted successfully!");
       })
       .catch((error) => {
@@ -70,29 +69,33 @@ function AdminUsers() {
         <thead>
           <tr>
             <th>#</th>
-          
+
             <th>User Name</th>
             <th>Phone Num</th>
             <th>User Type</th>
             <th>Company Name</th>
             <th>Edit</th>
-                <th>Delete</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {users
             .filter((user) => user.userName.includes(subText))
-            .map((user,index) => (
+            .map((user, index) => (
               <tr key={user.userId}>
-             
-                <td>{user.userId}</td>
+                <td>{index + 1}</td>
                 <td>{user.userName}</td>
                 <td>{user.phoneNumber}</td>
                 <td>{user.userType}</td>
                 <td>{user.companyName}</td>
-                <td><EditIcon/></td>
-            <td><DeleteForeverIcon onClick={() => onDeleteClicked(user.userId)}/></td>
-                
+                <td>
+                  <EditIcon />
+                </td>
+                <td>
+                  <DeleteForeverIcon
+                    onClick={() => onDeleteClicked(user.userId)}
+                  />
+                </td>
               </tr>
             ))}
         </tbody>

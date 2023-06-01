@@ -105,14 +105,14 @@ function AdminCoupons() {
             .filter((coupon) => coupon.couponName.includes(subText))
             .map((coupon, index) => (
               <tr  key={coupon.couponId}>
-                <td>{coupon.couponId}</td>
+                <td>{index+1}</td>
                 <td>{coupon.couponName}</td>
                 <td>{coupon.price}</td>
                 <td>{coupon.description}</td>
                 <td>{coupon.category}</td>
                 <td>{coupon.endDate}</td>
                 <td>
-                  <EditIcon />
+                  {/* <EditIcon onClick={() => onUpdateCoupon(coupon.couponId)}/> */}
                 </td>
                 <td>
                   <DeleteForeverIcon onClick={() => onDeleteClicked(coupon.couponId)}/>

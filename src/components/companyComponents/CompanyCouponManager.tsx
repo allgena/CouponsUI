@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
-import AdminComponent from "../adminComponents/AdminComponent";
+import CompanyComponent from "./CompanyComponent";
 import "./Create.css"
 
 
-function CouponManager(props: ICoupon) {
+
+function CompanyCouponManager(props: ICoupon) {
   
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
@@ -21,6 +22,8 @@ function CouponManager(props: ICoupon) {
   let [category, setCategory] = useState(coupon.category);
   let [companyName, setCompanyName] = useState(coupon.companyName);
   let [imageURL, setImageURL] = useState(coupon.imageURL);
+
+  let userCompanyName = useSelector((state: AppState) => state.logInData.companyName);
 
 
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
@@ -38,15 +41,14 @@ function CouponManager(props: ICoupon) {
         imageURL,
       });
       console.log(response);
-      alert("Coupon successfully created !");
-      navigate("/admin");
+      alert("Coupon successfully created!");
+      navigate("/company");
     } catch (e) {
       alert(e);
       console.error(e);
     }
   }
-
-  async function onUpdateCoupon(event: any) {
+async function onUpdateCoupon(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/coupons", {
         couponId,
@@ -61,19 +63,20 @@ function CouponManager(props: ICoupon) {
       });
       console.log(response);
       alert("Coupon updated");
+  
     } catch (e) {
       alert(e);
       console.error(e);
     }
   }
-  // function BackToAdmin() {
-  //   navigate("/admin/tab");
-  // }
+
+
+
 
   return (
     <div className="coupon-creater">
-        <AdminComponent />
-      <h3>Create coupon</h3>
+        <CompanyComponent />
+      <h3>Create Coupon</h3>
       <div className="inputs-container">
        
         <label htmlFor="name"> Coupon Name: </label>
@@ -90,7 +93,7 @@ function CouponManager(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={`${props.companyName}`}
+          defaultValue={`${userCompanyName}`}
           spellCheck="false"
           name="companyId"
           onChange={(event) => setCompanyName(event.target.value)}
@@ -185,4 +188,4 @@ function CouponManager(props: ICoupon) {
   );
 }
 
-export default CouponManager;
+export default CompanyCouponManager;
