@@ -11,24 +11,22 @@ import CompanyComponent from "./CompanyComponent";
 
 function CreateCoupon(props: ICoupon) {
   let navigate = useNavigate();
-  let coupon = useSelector((state: AppState) => state.coupon);
-  let [couponId, setCouponID] = useState(coupon.couponId);
-  let [couponName, setName] = useState(coupon.couponName);
-  let [price, setPrice] = useState(coupon.price);
-  let [description, setDescription] = useState(coupon.description);
-  let [startDate, setStartDate] = useState(coupon.startDate);
-  let [endDate, setEndDate] = useState(coupon.endDate);
-  let [category, setCategory] = useState(coupon.category);
-  let [companyName, setCompanyName] = useState(coupon.companyName);
-  let [imageURL, setImageURL] = useState(coupon.imageURL);
+  let [couponName, setName] = useState("");
+  let [price, setPrice] = useState(0.);
+  let [description, setDescription] = useState("");
+  let [startDate, setStartDate] = useState("");
+  let [endDate, setEndDate] = useState("");
+  let [category, setCategory] = useState("FOOD");
+  let [imageURL, setImageURL] = useState("");
 
-  let userCompanyName = useSelector((state: AppState) => state.logInData.companyName);
+  let companyName = useSelector((state: AppState) => state.logInData.companyName);
 
-
+ debugger
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
   async function onCreateCoupon(event: any) {
     try {
+      debugger
       const response = await axios.post("http://localhost:8080/coupons", {
         couponName,
         price,
