@@ -1,8 +1,11 @@
 // import Search from "../search/Search";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 import "./AdminComponent.css";
+import axios from "axios";
+import { ActionType } from "../redux/action-type";
+import { useEffect } from "react";
 
 
 function AdminComponent() {
@@ -10,6 +13,20 @@ function AdminComponent() {
   let userType = useSelector((state: AppState) => state.logInData.userType);
 
   let navigate = useNavigate();
+  let dispatch = useDispatch();
+  useEffect(() => {
+    getCompaniesNames();
+  });
+
+  async function getCompaniesNames() {
+    let url = `http://localhost:8080/companies/names`;
+
+    let response = await axios.get(url);
+    dispatch({
+      type: ActionType.GetCompaniesNames,
+      payload: { companiesNames: response.data },
+    });
+  }
 
   function onCouponsButtonClick() {
     if (userType !== "ADMIN") {

@@ -9,6 +9,7 @@ export enum ActionType {
   Users,
   GetUsers,
   Companies,
+  GetCompaniesNames,
   ChangeCouponProps,
   GetCompanies,
   Purchases,

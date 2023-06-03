@@ -19,6 +19,7 @@ function SingleUser(props: IUser) {
   let [companyName, setCompanyName] = useState(user.companyName);
   let [userType, setUserType] = useState(user.userType);
 
+  let companiesNames = useSelector((state: AppState) => state.companiesNames);
 
   let userTypes = ["COMPANY", "ADMIN", "CUSTOMER"];
 
@@ -61,6 +62,7 @@ function SingleUser(props: IUser) {
         />{" "}
         
         <br />
+        <label htmlFor="name"> User Type: </label>
         <br />
         <select
           name="categoryId"
@@ -74,6 +76,7 @@ function SingleUser(props: IUser) {
           ))}
         </select>
         <br></br>
+        <br></br>
         <label htmlFor="companyId"> Phone: </label>
         <br />
         <input
@@ -86,14 +89,25 @@ function SingleUser(props: IUser) {
         <br></br>
         <label htmlFor="price">Company Name: </label>
         <br />
-        <input
+        {/* <input
           type="text"
           defaultValue={`${user.companyName}`}
           name="price"
           onChange={(event) => setCompanyName(event.target.value)}
-        />{" "}
-        <br />
-      
+        />{" "} */}
+     
+        <select
+          name="categoryId"
+          value={companiesNames}
+          onChange={(event) => setCompanyName(event.target.value)}
+        >
+          {companiesNames.map((cat, index) => (
+            <option key={index} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+        <br></br>
          <br />
                 <input
           className="submit-button"

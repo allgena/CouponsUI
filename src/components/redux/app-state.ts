@@ -41,4 +41,5 @@ export class AppState {
   };
   
   public selectedCategory: string = "All";
+  public companiesNames:string[]=[];
 }

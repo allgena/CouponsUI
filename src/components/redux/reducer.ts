@@ -64,6 +64,9 @@ export function reduce(
     case ActionType.SearchValue:
       newAppState.searchValue = action.payload.searchValue;
       break;
+    case ActionType.GetCompaniesNames:
+      newAppState.companiesNames = action.payload.companiesNames;
+      break;
 
     case ActionType.DeleteCoupon:
       let id = action.payload.couponDeletedId;
