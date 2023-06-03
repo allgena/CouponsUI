@@ -15,6 +15,10 @@ function CompanyManager() {
   let [phoneNumber, setPhoneNumber] = useState("");
 
   async function onCreateCompany(event: any) {
+    if (!companyName || !address || !phoneNumber) {
+      alert("Please fill in all fields");
+      return;
+    }
     try {
       const response = await axios.post("http://localhost:8080/companies", {
         companyName,
@@ -48,6 +52,7 @@ function CompanyManager() {
   }
 
   async function onDeleteCompany(event: any) {
+  
     try {
       const url = `http://localhost:8080/companies/${companyId}`;
       const response = await axios.delete(url);
@@ -70,12 +75,7 @@ function CompanyManager() {
       <AdminComponent />
       <h3>Create company</h3>
       <div className="inputs-container"> 
-        {/* <input
-          type="text"
-          placeholder="ID (for update/delete)"
-          spellCheck="false"
-          onChange={(event) => setCompanyId(+event.target.value)}
-        />{" "} */}
+
         <br />
         <input
           type="text"

@@ -46,19 +46,7 @@ export function reduce(
 
      
     case ActionType.ChangeCouponProps:
-      
-      // let couponId = action.payload.coupon.couponId;
-     
-      // let coupon = newAppState.coupons.find(
-      //   (coupon) => coupon.couponId === couponId
-      // ) as ICoupon;
-      // coupon.couponName = "";
-      // coupon.category = "";
-      // coupon.description = ""; 
-      // coupon.price = +"";
-      // coupon.startDate = "";
-      // coupon.endDate = "";
-      // coupon.imageURL = "";
+    
 
       newAppState.coupon = action.payload.coupon;
       break;
@@ -80,15 +68,6 @@ export function reduce(
       newAppState.coupons = couponsArrayAfterDeletion;
       newAppState.coupons = [...newAppState.coupons];
       break;
-
-      // case ActionType.DeleteCompany:
-      // let id = action.payload.companyDeletedId;
-      // let companiesArrayAfterDeletion = newAppState.coupons.filter((company) => {
-      //   return id !== company.companyId;
-      // });
-      // newAppState.companies = companiesArrayAfterDeletion;
-      // newAppState.companies = [...newAppState.companies];
-      // break;
   }
 
   return newAppState;

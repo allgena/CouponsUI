@@ -65,24 +65,6 @@ function AdminCoupons() {
     });
     navigate("/admin/create/coupons");
     
-    // try {
-    //   const response = await axios.put("http://localhost:8080/coupons", {
-    //     couponId: coupon.couponId,
-    //     couponName: coupon.couponName,
-    //     price: coupon.price,
-    //     description: coupon.description,
-    //     startDate: coupon.startDate,
-    //     endDate: coupon.endDate,
-    //     category: coupon.category,
-    //     companyName: coupon.companyName,
-    //     imageURL: coupon.imageURL,
-    //   });
-    //   console.log(response);
-    //   alert("Coupon updated");
-    // } catch (e) {
-    //   alert(e);
-    //   console.error(e);
-    // }
   }
 
   function onNextClicked() {
@@ -124,10 +106,10 @@ function AdminCoupons() {
                 <td>{coupon.category}</td>
                 <td>{coupon.endDate}</td>
                 <td>
-                  <EditIcon onClick={() => onUpdateCoupon(coupon)}/>
+                  <EditIcon className="edit-icon" onClick={() => onUpdateCoupon(coupon)}/>
                 </td>
                 <td>
-                  <DeleteForeverIcon onClick={() => onDeleteClicked(coupon.couponId)}/>
+                  <DeleteForeverIcon  className="delete-icon" onClick={() => onDeleteClicked(coupon.couponId)}/>
                 </td>
               </tr>
             ))}

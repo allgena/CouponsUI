@@ -99,10 +99,10 @@ function AdminUsers() {
                 <td>{user.userType}</td>
                 <td>{user.companyName}</td>
                 <td>
-                <EditIcon onClick={() => onUpdateUser(user)}/>
+                <EditIcon className="edit-icon"onClick={() => onUpdateUser(user)}/>
                 </td>
                 <td>
-                  <DeleteForeverIcon
+                  <DeleteForeverIcon className="delete-icon"
                     onClick={() => onDeleteClicked(user.userId)}
                   />
                 </td>

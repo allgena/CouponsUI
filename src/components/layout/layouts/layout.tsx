@@ -20,6 +20,7 @@ import CompanyPurchases from "../../companyComponents/CompanyPurchases";
 import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";
 import CompanyCoupons from "../../companyComponents/CompanyCoupons";
 import SingleUser from "../../adminCreateItem/SingleUser";
+import Modal from "../../login/Login";
 
 function Layout() {
   return (
@@ -36,6 +37,7 @@ function Layout() {
             <Route path="/coupons" element={<CustomerCouponsContainer />} />
             <Route path="/company" element={<CompanyComponent />} />
             <Route path="/login" element={<Login />} />
+           {/* <Route path="/login" element={<Modal setIsModalOpen={undefined} />} />  */}
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<AdminComponent />} />
             <Route path="/admin/coupons" element={<AdminCoupons />} />

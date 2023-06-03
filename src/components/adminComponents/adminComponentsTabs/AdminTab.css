@@ -42,3 +42,13 @@ h3{
   margin-top:3px;
   color: wheat;
 }
+
+.edit-icon:hover,
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+.edit-icon:active,
+.delete-icon:active {
+  transform: scale(0.8);
+}

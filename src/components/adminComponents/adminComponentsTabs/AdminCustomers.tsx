@@ -75,8 +75,8 @@ function AdminCustomers() {
                 <td>{customer.address}</td>
                 
                 <td>{customer.amountOfPurchases}</td>
-                <th><EditIcon/></th>
-            <th><DeleteForeverIcon/></th>
+                <th><EditIcon className="edit-icon"/></th>
+            <th><DeleteForeverIcon className="delete-icon"/></th>
               </tr>
             ))}
         </tbody>

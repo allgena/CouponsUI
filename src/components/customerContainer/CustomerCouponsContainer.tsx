@@ -48,11 +48,6 @@ function CustomerCouponsContainer() {
     } catch (e: any) {}
   }
 
- 
-  // function onCategoryClick(category: string) {
-  //   setSelectedCategory(category);
-  //   setPageNumber(1);
-  // }
 
   function onNextClicked() {
     pageNumber++;

@@ -4,7 +4,7 @@ import "../login/Login.css";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import ISuccessfulLoginData from "../models/ISuccessFulLoginData";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ActionType } from "../redux/action-type";
 
 
@@ -100,6 +100,12 @@ export default Login;
 //   const navigate = useNavigate();
 //   let dispatch = useDispatch();
 
+// function Modal({ setIsModalOpen}) {
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+//   const [userName, setUserName] = useState("");
+//   const [password, setPassword] = useState("");
+
 //   async function onLogin(event:any) {
 //     try {
 //       const response = await axios.post("http://localhost:8080/users/login", {
@@ -127,9 +133,12 @@ export default Login;
 //                } else if (successfulLoginResponse.userType === "ADMIN") {
 //                  navigate("/admin");
 //                }
-//       setIsModalOpen(true);
+//       setIsModalOpen(false);
 //     } catch (e:any) {
 //       console.error(e);
+//   //   setIsModalOpen(false); // Закрываем модальное окно после успешного входа
+//   // } catch (e) {
+//   //   console.error(e);
    
 //       if (e.response?.data?.error?.message) {
 //         alert(e.response.data.error.message);
@@ -140,13 +149,15 @@ export default Login;
 //   }
 
 //   function openRegisterModal() {
-//     setIsModalOpen(true);
+//     // setIsModalOpen(true);
+//     navigate("/register");
+//     setIsModalOpen(false); // Закрываем модальное окно при открытии окна регистрации
 //   }
+  
 
 //   return (
-//     <div>
-//       {isModalOpen && (
-//         <div className="modal">
+//     <div className="modal">
+    
 //           <div className="modal-content">
 //             <h3>Sign In</h3>
 //             <div className="#">
@@ -179,13 +190,11 @@ export default Login;
 //             <button onClick={() => setIsModalOpen(false)}>Close</button>
 //           </div>
 //         </div>
-//       )}
-//       {!isModalOpen && (
-//         <button onClick={() => setIsModalOpen(true)}>Login</button>
-//       )}
-//     </div>
+   
+      
+
 //   );
 // }
 
-// export default Login;
+// export default Modal;
 

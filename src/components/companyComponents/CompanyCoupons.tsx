@@ -7,11 +7,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import CompanyComponent from "./CompanyComponent";
 import { ActionType } from "../redux/action-type";
 import { AppState } from "../redux/app-state";
+import ICoupon from "../models/ICoupon";
+import { useNavigate } from "react-router-dom";
 
 function CompanyCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
+  let navigate = useNavigate();
   let userCompanyId = useSelector((state: AppState) => state.logInData.companyId);
 
   useEffect(() => {
@@ -56,6 +59,15 @@ function CompanyCoupons() {
       return true;
     }
   }
+
+  // async function onUpdateCoupon(coupon: ICoupon) {
+  //   dispatch({
+  //     type: ActionType.ChangeCouponProps,
+  //     payload: { coupon: coupon },
+  //   });
+  //   navigate("/company/create/coupons");
+    
+  // }
 
 //  async function onUpdateCoupon(event:any) {
 //     try {
@@ -118,11 +130,11 @@ function CompanyCoupons() {
                     <td>{coupon.category}</td>
                     <td>{coupon.endDate}</td>
                     <td>
-                    <EditIcon/>
+                    <EditIcon className="edit-icon"/>
                       {/* <EditIcon onClick={() => onUpdateCoupon(coupon.couponId)}/> */}
                     </td>
                     <td>
-                      <DeleteForeverIcon onClick={() => onDeleteClicked(coupon.couponId)}/>
+                      <DeleteForeverIcon className="delete-icon" onClick={() => onDeleteClicked(coupon.couponId)}/>
                     </td>
                   </tr>
                 ))}

@@ -30,6 +30,7 @@ function CompanyComponent() {
       navigate("/login");
     } else navigate("/company/customers");
   }
+  
   function onPurchasesButtonClick() {
     if (userType !== "COMPANY") {
       navigate("/login");
@@ -52,7 +53,7 @@ function CompanyComponent() {
   return (
     <div className="company-page">
       <h4>
-        Hello, {useSelector((state: AppState) => state.logInData.userName)  } { `from ${userCompanyName}`}
+        Hello, {useSelector((state: AppState) => state.logInData.userName)  } { `from  "${userCompanyName}"`}
       </h4>
       <div className="sections-buttons">
         <input type="button" value="Coupons" onClick={onCouponsButtonClick} />

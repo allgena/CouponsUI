@@ -33,6 +33,7 @@ a {
 }
 
 
+
 input[type="button"]{
 
   border-radius: 10px;
@@ -40,6 +41,12 @@ input[type="button"]{
   cursor:pointer;
   margin-top: 10px;
 
+}
+
+
+input[type="button"]:active
+ {
+  transform: scale(0.9);
 }
 
 input[type="text" i] {

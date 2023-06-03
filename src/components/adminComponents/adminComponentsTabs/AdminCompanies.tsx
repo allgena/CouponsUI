@@ -93,10 +93,10 @@ function AdminCompanies() {
                 <td>{company.address}</td>
                 <td>{company.numberOfPurchases}</td>
                 <td>
-                  <EditIcon />
+                  <EditIcon className="edit-icon"/>
                 </td>
                 <td>
-                  <DeleteForeverIcon
+                  <DeleteForeverIcon className="delete-icon"
                     onClick={() => deleteCompany(company.companyId)}
                   />
                 </td>

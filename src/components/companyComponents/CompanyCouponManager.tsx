@@ -176,12 +176,12 @@ async function onUpdateCoupon(event: any) {
           value="Create"
           onClick={onCreateCoupon}
         />
-        <input
+        {/* <input
           className="submit-button"
           type="button"
           value="Delete"
           onClick={onUpdateCoupon}
-        />
+        /> */}
         <br />
       </div>
     </div>

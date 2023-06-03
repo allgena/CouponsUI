@@ -19,7 +19,7 @@
   margin-bottom: 20px;
 }
 
-.pagination-button {
+.pagination-container >.button {
   background: white;
   color: black;
   padding: 2px 15px;
@@ -27,6 +27,11 @@
   border-radius: 10px;
   margin: 0 5px;
   cursor: pointer;
+}
+
+
+.pagination-container button:active {
+  transform: scale(0.8);
 }
 
 .pagination-container h5 {
