@@ -8,11 +8,14 @@ import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
+import ICompany from "../../models/ICompany";
+import { useNavigate } from "react-router-dom";
 
 function AdminCompanies() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
+  let navigate =  useNavigate();
 
   useEffect(() => {
     getCompanies();
@@ -64,6 +67,14 @@ function AdminCompanies() {
     setPageNumber(pageNumber);
   }
 
+  function onUpdateCompany(company: ICompany): void {
+    debugger
+    dispatch({
+      type: ActionType.UpdateCompany,
+      payload: { company: company },
+    });
+    navigate("/admin/update/companies");  }
+
   return (
     <div className="cards-container">
       <AdminComponent />
@@ -93,7 +104,7 @@ function AdminCompanies() {
                 <td>{company.address}</td>
                 <td>{company.numberOfPurchases}</td>
                 <td>
-                  <EditIcon className="edit-icon"/>
+                <EditIcon className="edit-icon"onClick={() => onUpdateCompany(company)}/>
                 </td>
                 <td>
                   <DeleteForeverIcon className="delete-icon"

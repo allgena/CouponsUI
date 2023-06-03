@@ -13,7 +13,7 @@ import AdminCompanies from "../../adminComponents/adminComponentsTabs/AdminCompa
 import AdminComponent from "../../adminComponents/AdminComponent";
 import Home from "../../home/Home";
 import CreateCompany from "../../adminComponents/adminComponentsTabs/CreateCompany";
-import CompanyManager from "../../adminComponents/adminComponentsTabs/CreateCompany";
+import CreateCompanyManager from "../../adminComponents/adminComponentsTabs/CreateCompany";
 import SingleCoupon from "../../adminCreateItem/SingleCoupon";
 import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
@@ -21,6 +21,7 @@ import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";
 import CompanyCoupons from "../../companyComponents/CompanyCoupons";
 import SingleUser from "../../adminCreateItem/SingleUser";
 import Modal from "../../login/Login";
+import UpdateCompanyManager from "../../adminComponents/adminComponentsTabs/UpdateCompany";
 
 function Layout() {
   return (
@@ -45,7 +46,8 @@ function Layout() {
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/admin/companies" element={<AdminCompanies />} />
             <Route path="/admin/purchases" element={<AdminPurchases />} />
-            <Route path="/admin/create/companies" element={<CompanyManager/>}/>
+            <Route path="/admin/create/companies" element={<CreateCompanyManager/>}/>
+            <Route path="/admin/update/companies" element={<UpdateCompanyManager/>}/>
             <Route path="/admin/create/coupons" element={<SingleCoupon couponId={0} couponName={""}
             price={0} description={""} startDate={undefined} endDate={undefined} category={""}
             companyName={""} imageURL={""} coupon={undefined}/>}/>

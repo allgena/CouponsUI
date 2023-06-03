@@ -26,6 +26,7 @@ export class AppState {
     companyId: 0
   };
   public companies: ICompany[] = [];
+  public companyForUpdate!: ICompany;
   public customers: ICustomer[] = [];
   public purchases: IPurchase[] = [];
   public getCouponsByPage: ICoupon[] = [];

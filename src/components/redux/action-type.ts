@@ -27,5 +27,5 @@ export enum ActionType {
   DeleteCompany,
   SelectedCategory,
   UpdateUser,
-  CeangeCompanyProps
+  UpdateCompany
 }

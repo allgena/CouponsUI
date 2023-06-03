@@ -56,6 +56,11 @@ export function reduce(
       newAppState.userForUpdate = action.payload.user;
       break;
 
+      case ActionType.UpdateCompany:
+        debugger
+        newAppState.companyForUpdate = action.payload.company;
+        break;
+  
     case ActionType.SearchValue:
       newAppState.searchValue = action.payload.searchValue;
       break;

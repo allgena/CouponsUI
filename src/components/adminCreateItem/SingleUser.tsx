@@ -12,7 +12,7 @@ function SingleUser(props: IUser) {
   
   let navigate = useNavigate();
   let user = useSelector((state: AppState) => state.userForUpdate);
-  debugger
+  
   let [userId, setUserId] = useState(user.userId);
   let [userName, setUserName] = useState(user.userName);
   let [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
