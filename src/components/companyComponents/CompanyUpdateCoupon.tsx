@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
-import CompanyComponent from "./CompanyComponent";
+import AdminComponent from "../adminComponents/AdminComponent";
 import "./Create.css"
+import CompanyComponent from "./CompanyComponent";
 
 
-
-function CompanyCouponManager(props: ICoupon) {
+function CompanyUpdateCoupon(props: ICoupon) {
   
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
@@ -23,32 +23,11 @@ function CompanyCouponManager(props: ICoupon) {
   let [companyName, setCompanyName] = useState(coupon.companyName);
   let [imageURL, setImageURL] = useState(coupon.imageURL);
 
-  let userCompanyName = useSelector((state: AppState) => state.logInData.companyName);
-
 
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
-  async function onCreateCoupon(event: any) {
-    try {
-      const response = await axios.post("http://localhost:8080/coupons", {
-        couponName,
-        price,
-        description,
-        startDate,
-        endDate,
-        category,
-        companyName,
-        imageURL,
-      });
-      console.log(response);
-      alert("Coupon successfully created!");
-      navigate("/company");
-    } catch (e) {
-      alert(e);
-      console.error(e);
-    }
-  }
-async function onUpdateCoupon(event: any) {
+ 
+  async function onUpdateCoupon(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/coupons", {
         couponId,
@@ -63,47 +42,39 @@ async function onUpdateCoupon(event: any) {
       });
       console.log(response);
       alert("Coupon updated");
-  
+      navigate("/company/coupons");
+
     } catch (e) {
       alert(e);
       console.error(e);
     }
   }
-
-
-
+  // function BackToAdmin() {
+  //   navigate("/admin/tab");
+  // }
 
   return (
     <div className="coupon-creater">
         <CompanyComponent />
-      <h3>Create Coupon</h3>
+      <h3>Update coupon</h3>
       <div className="inputs-container">
        
         <label htmlFor="name"> Coupon Name: </label>
         <br />
         <input
           type="text"
-          defaultValue={props.couponName}
+          defaultValue={coupon.couponName}
           spellCheck="false"
           name="name"
           onChange={(event) => setName(event.target.value)}
         />{" "}
-        <br />
-        <label htmlFor="companyId"> Company name: </label>
-        <br />
-        <input
-          type="text"
-          defaultValue={`${userCompanyName}`}
-          spellCheck="false"
-          name="companyId"
-          onChange={(event) => setCompanyName(event.target.value)}
-        />{" "}
+              
         <br></br>
         <label htmlFor="price">Price: </label>
         <br />
         <input
           type="text"
-          defaultValue={`${props.price}`}
+          defaultValue={`${coupon.price}`}
           name="price"
           onChange={(event) => setPrice(+event.target.value)}
         />{" "}
@@ -112,7 +83,7 @@ async function onUpdateCoupon(event: any) {
         <br />
         <input
           type="text"
-          defaultValue={props.description}
+          defaultValue={coupon.description}
           spellCheck="false"
           name="description"
           onChange={(event) => setDescription(event.target.value)}
@@ -122,7 +93,7 @@ async function onUpdateCoupon(event: any) {
         <br />
         <input
           type="date"
-          defaultValue={props.startDate}
+          defaultValue={coupon.startDate}
           name="startDate"
           onChange={(event) => setStartDate(event.target.value)}
         />{" "}
@@ -131,7 +102,7 @@ async function onUpdateCoupon(event: any) {
         <br />
         <input
           type="date"
-          defaultValue={props.endDate}
+          defaultValue={coupon.endDate}
           name="endDate"
           onChange={(event) => setEndDate(event.target.value)}
         />{" "}
@@ -164,28 +135,22 @@ async function onUpdateCoupon(event: any) {
         <br />
         <input
           type="text"
-          defaultValue={`${props.imageURL}`}
+          defaultValue={`${coupon.imageURL}`}
           spellCheck="false"
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
          <br />
-        <input
+                <input
           className="submit-button"
           type="button"
-          value="Create"
-          onClick={onCreateCoupon}
-        />
-        {/* <input
-          className="submit-button"
-          type="button"
-          value="Delete"
+          value="Update"
           onClick={onUpdateCoupon}
-        /> */}
+        />
         <br />
       </div>
     </div>
   );
 }
 
-export default CompanyCouponManager;
+export default CompanyUpdateCoupon;

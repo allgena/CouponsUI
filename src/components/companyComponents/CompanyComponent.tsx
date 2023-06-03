@@ -3,7 +3,6 @@ import { Route, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 import "../adminComponents/AdminComponent.css"
-import "./CompanyCouponManager";
 import "./CompanyCoupons"
 
 
@@ -41,7 +40,7 @@ function CompanyComponent() {
     debugger;
     if (userType !== "COMPANY") {
       navigate("/login");
-    } else navigate("/company/create/coupons");
+    } else navigate("/company/coupons/create");
   }
 
   // function onCreateCompanyClick() {

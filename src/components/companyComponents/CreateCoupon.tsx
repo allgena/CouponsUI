@@ -6,10 +6,10 @@ import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import AdminComponent from "../adminComponents/AdminComponent";
 import "./Create.css"
+import CompanyComponent from "./CompanyComponent";
 
 
-function SingleCoupon(props: ICoupon) {
-  
+function CreateCoupon(props: ICoupon) {
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
   let [couponId, setCouponID] = useState(coupon.couponId);
@@ -22,14 +22,14 @@ function SingleCoupon(props: ICoupon) {
   let [companyName, setCompanyName] = useState(coupon.companyName);
   let [imageURL, setImageURL] = useState(coupon.imageURL);
 
+  let userCompanyName = useSelector((state: AppState) => state.logInData.companyName);
+
 
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
- 
-  async function onUpdateCoupon(event: any) {
+  async function onCreateCoupon(event: any) {
     try {
-      const response = await axios.put("http://localhost:8080/coupons", {
-        couponId,
+      const response = await axios.post("http://localhost:8080/coupons", {
         couponName,
         price,
         description,
@@ -40,47 +40,37 @@ function SingleCoupon(props: ICoupon) {
         imageURL,
       });
       console.log(response);
-      alert("Coupon updated");
+      alert("Coupon successfully created!");
+      navigate("/company/coupons");
     } catch (e) {
       alert(e);
       console.error(e);
     }
   }
-  // function BackToAdmin() {
-  //   navigate("/admin/tab");
-  // }
+
 
   return (
     <div className="coupon-creater">
-        <AdminComponent />
-      <h3>Update coupon</h3>
+        <CompanyComponent />
+      <h3>Create Coupon</h3>
       <div className="inputs-container">
        
         <label htmlFor="name"> Coupon Name: </label>
         <br />
         <input
           type="text"
-          defaultValue={coupon.couponName}
+          defaultValue={props.couponName}
           spellCheck="false"
           name="name"
           onChange={(event) => setName(event.target.value)}
         />{" "}
         <br />
-        <label htmlFor="companyId"> Company name: </label>
-        <br />
-        <input
-          type="text"
-          defaultValue={`${coupon.companyName}`}
-          spellCheck="false"
-          name="companyId"
-          onChange={(event) => setCompanyName(event.target.value)}
-        />{" "}
-        <br></br>
+       
         <label htmlFor="price">Price: </label>
         <br />
         <input
           type="text"
-          defaultValue={`${coupon.price}`}
+          defaultValue={`${props.price}`}
           name="price"
           onChange={(event) => setPrice(+event.target.value)}
         />{" "}
@@ -89,7 +79,7 @@ function SingleCoupon(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={coupon.description}
+          defaultValue={props.description}
           spellCheck="false"
           name="description"
           onChange={(event) => setDescription(event.target.value)}
@@ -99,7 +89,7 @@ function SingleCoupon(props: ICoupon) {
         <br />
         <input
           type="date"
-          defaultValue={coupon.startDate}
+          defaultValue={props.startDate}
           name="startDate"
           onChange={(event) => setStartDate(event.target.value)}
         />{" "}
@@ -108,7 +98,7 @@ function SingleCoupon(props: ICoupon) {
         <br />
         <input
           type="date"
-          defaultValue={coupon.endDate}
+          defaultValue={props.endDate}
           name="endDate"
           onChange={(event) => setEndDate(event.target.value)}
         />{" "}
@@ -141,22 +131,28 @@ function SingleCoupon(props: ICoupon) {
         <br />
         <input
           type="text"
-          defaultValue={`${coupon.imageURL}`}
+          defaultValue={`${props.imageURL}`}
           spellCheck="false"
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
          <br />
-                <input
+        <input
           className="submit-button"
           type="button"
-          value="Update"
-          onClick={onUpdateCoupon}
+          value="Create"
+          onClick={onCreateCoupon}
         />
+        {/* <input
+          className="submit-button"
+          type="button"
+          value="Delete"
+          onClick={onUpdateCoupon}
+        /> */}
         <br />
       </div>
     </div>
   );
 }
 
-export default SingleCoupon;
+export default CreateCoupon;

@@ -10,7 +10,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import ICoupon from "../../models/ICoupon";
 import { Navigate, useNavigate } from "react-router-dom";
-import SingleCoupon from "../../adminCreateItem/SingleCoupon";
+import AdminUpdateCoupon from "../../adminCreateItem/AdminUpdateCoupon";
 
 function AdminCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
@@ -63,7 +63,7 @@ function AdminCoupons() {
       type: ActionType.ChangeCouponProps,
       payload: { coupon: coupon },
     });
-    navigate("/admin/create/coupons");
+    navigate("/admin/coupons/update");
     
   }
 

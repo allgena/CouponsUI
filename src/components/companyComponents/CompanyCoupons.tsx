@@ -60,36 +60,15 @@ function CompanyCoupons() {
     }
   }
 
-  // async function onUpdateCoupon(coupon: ICoupon) {
-  //   dispatch({
-  //     type: ActionType.ChangeCouponProps,
-  //     payload: { coupon: coupon },
-  //   });
-  //   navigate("/company/create/coupons");
+  async function onUpdateCoupon(coupon: ICoupon) {
+    dispatch({
+      type: ActionType.ChangeCouponProps,
+      payload: { coupon: coupon },
+    });
+    navigate("/company/coupons/update");
     
-  // }
-
-//  async function onUpdateCoupon(event:any) {
-//     try {
-//       const response = await axios.put(`http://localhost:8080/coupons`, {
-      
-//         couponId,
-//         couponName,
-//         price,
-//         description,
-//         startDate,
-//         endDate,
-//         category,
-//         companyName,
-//         imageURL,
-//     });
-//       console.log(response);
-//       alert("Coupon updated");
-//     } catch (e) {
-//       alert(e);
-//       console.error(e);
-      
-//     }
+  }
+  
   
   function onNextClicked() {
         pageNumber++;
@@ -130,8 +109,8 @@ function CompanyCoupons() {
                     <td>{coupon.category}</td>
                     <td>{coupon.endDate}</td>
                     <td>
-                    <EditIcon className="edit-icon"/>
-                      {/* <EditIcon onClick={() => onUpdateCoupon(coupon.couponId)}/> */}
+                    {/* <EditIcon className="edit-icon"/> */}
+                      <EditIcon onClick={() => onUpdateCoupon(coupon)}/>
                     </td>
                     <td>
                       <DeleteForeverIcon className="delete-icon" onClick={() => onDeleteClicked(coupon.couponId)}/>

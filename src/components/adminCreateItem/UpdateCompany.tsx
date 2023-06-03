@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminComponent from "../AdminComponent";
-import { ActionType } from "../../redux/action-type";
+
+
 import { useSelector } from "react-redux";
-import { AppState } from "../../redux/app-state";
+
+import AdminComponent from "../adminComponents/AdminComponent";
+import { AppState } from "../redux/app-state";
 
 function UpdateCompanyManager() {
   let navigate = useNavigate();

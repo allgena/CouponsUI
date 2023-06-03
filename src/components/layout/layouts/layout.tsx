@@ -12,16 +12,18 @@ import AdminCustomers from "../../adminComponents/adminComponentsTabs/AdminCusto
 import AdminCompanies from "../../adminComponents/adminComponentsTabs/AdminCompanies";
 import AdminComponent from "../../adminComponents/AdminComponent";
 import Home from "../../home/Home";
-import CreateCompany from "../../adminComponents/adminComponentsTabs/CreateCompany";
-import CreateCompanyManager from "../../adminComponents/adminComponentsTabs/CreateCompany";
-import SingleCoupon from "../../adminCreateItem/SingleCoupon";
+import CreateCompany from "../../adminCreateItem/CreateCompany";
+import CreateCompanyManager from "../../adminCreateItem/CreateCompany";
+import AdminUpdateCoupon from "../../adminCreateItem/AdminUpdateCoupon";
 import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
-import CompanyCouponManager from "../../companyComponents/CompanyCouponManager";
 import CompanyCoupons from "../../companyComponents/CompanyCoupons";
 import SingleUser from "../../adminCreateItem/SingleUser";
 import Modal from "../../login/Login";
-import UpdateCompanyManager from "../../adminComponents/adminComponentsTabs/UpdateCompany";
+import UpdateCompanyManager from "../../adminCreateItem/UpdateCompany";
+import CreateCoupon from "../../companyComponents/CreateCoupon";
+import CompanyUpdateCoupon from "../../companyComponents/CompanyUpdateCoupon";
+
 
 function Layout() {
   return (
@@ -48,14 +50,18 @@ function Layout() {
             <Route path="/admin/purchases" element={<AdminPurchases />} />
             <Route path="/admin/create/companies" element={<CreateCompanyManager/>}/>
             <Route path="/admin/update/companies" element={<UpdateCompanyManager/>}/>
-            <Route path="/admin/create/coupons" element={<SingleCoupon couponId={0} couponName={""}
-            price={0} description={""} startDate={undefined} endDate={undefined} category={""}
-            companyName={""} imageURL={""} coupon={undefined}/>}/>
+
             <Route path="/company/coupons" element={<CompanyCoupons />} />
             <Route path="/company/purchases" element={<CompanyPurchases />} />
-            <Route path="/company/create/coupons" element={<CompanyCouponManager couponId={0} couponName={""}
+            <Route path="/company/coupons/create" element={<CreateCoupon couponId={0} couponName={""}
             price={0} description={""} startDate={undefined} endDate={undefined} category={""}
             companyName={""} imageURL={""} coupon={undefined}/>}/>
+            <Route path="/admin/coupons/update" element={<AdminUpdateCoupon couponId={0} couponName={""}
+                price={0} description={""} startDate={undefined} endDate={undefined} category={""}
+                  companyName={""} imageURL={""} coupon={undefined}/>}/>
+            <Route path="/company/coupons/update" element={<CompanyUpdateCoupon couponId={0} couponName={""}
+                price={0} description={""} startDate={undefined} endDate={undefined} category={""}
+                  companyName={""} imageURL={""} coupon={undefined}/>}/>
             <Route path="/admin/update/user" element={<SingleUser userId={0} userName={""} userType={""} 
             phoneNumber={""} companyName={""} />} />
 
