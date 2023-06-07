@@ -62,6 +62,7 @@ function SingleUser(props: IUser) {
         />{" "}
         
         <br />
+        <br />
         <label htmlFor="name"> User Type: </label>
         <br />
         <select
@@ -86,9 +87,11 @@ function SingleUser(props: IUser) {
           name="companyId"
           onChange={(event) => setPhoneNumber(event.target.value)}
         />{" "}
+         <br />
         <br></br>
         <label htmlFor="price">Company Name: </label>
         <br />
+        
         {/* <input
           type="text"
           defaultValue={`${user.companyName}`}
@@ -108,6 +111,7 @@ function SingleUser(props: IUser) {
           ))}
         </select>
         <br></br>
+         <br />
          <br />
                 <input
           className="submit-button"
