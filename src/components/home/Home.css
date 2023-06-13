@@ -1,0 +1,70 @@
+.marquee-infinite {
+    margin: 100px auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.marquee-infinite div {
+    display: flex;
+    width: 300%;
+
+    animation: marquee-infinite 25s linear infinite;
+}
+
+.img1 {
+    background-image: url(../../img/electro2.jpg);
+    background-position: center;
+}
+
+.img2 {
+    background-image: url(../../img/home2006-111.jpg);
+    background-position: center;
+}
+
+.img3 {
+    background-image: url(../../img/toy3.jpg);
+    background-position: center;
+}
+
+.img4 {
+    background-image: url(../../img/travel100.jpg);
+    background-position: center;
+
+}
+
+.marquee-infinite span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.marquee-infinite img {
+    height: 450px;
+    width: 22%;
+    background-position: cover;
+    cursor: pointer;
+ }
+
+ .marquee-infinite img:hover{
+      border: 5px solid rgb(26, 218, 26); 
+ }
+
+
+.marquee-infinite:hover div {
+    animation-play-state: paused;
+    
+}
+
+
+@keyframes marquee-infinite {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+

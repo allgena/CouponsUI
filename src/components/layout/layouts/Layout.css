@@ -4,16 +4,17 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 10% 85% 5%;
+  /* grid-template-rows: 10% 85% 5%; */
+  grid-template-rows: auto 1fr auto;
   
   
 }
 
 
-.layout>footer {
+/* .layout>footer {
   grid-column: span 12;
   background-color: gray
-}
+} */
 
 .layout>header {
   grid-column: span 12;

@@ -41,6 +41,7 @@ function AdminUpdateCoupon(props: ICoupon) {
       });
       console.log(response);
       alert("Coupon updated");
+      navigate("/admin/coupons");
     } catch (e) {
       alert(e);
       console.error(e);

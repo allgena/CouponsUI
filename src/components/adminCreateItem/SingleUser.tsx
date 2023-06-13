@@ -36,14 +36,13 @@ function SingleUser(props: IUser) {
       });
       console.log(response);
       alert("User updated");
+      navigate("/admin/users");
     } catch (e) {
       alert(e);
       console.error(e);
+      
     }
   }
-  // function BackToAdmin() {
-  //   navigate("/admin/tab");
-  // }
 
   return (
     <div className="coupon-creater">
@@ -61,7 +60,7 @@ function SingleUser(props: IUser) {
           onChange={(event) => setUserName(event.target.value)}
         />{" "}
         
-        <br />
+        {/* <br /> */}
         <br />
         <label htmlFor="name"> User Type: </label>
         <br />
@@ -77,7 +76,7 @@ function SingleUser(props: IUser) {
           ))}
         </select>
         <br></br>
-        <br></br>
+        {/* <br></br> */}
         <label htmlFor="companyId"> Phone: </label>
         <br />
         <input
@@ -88,7 +87,7 @@ function SingleUser(props: IUser) {
           onChange={(event) => setPhoneNumber(event.target.value)}
         />{" "}
          <br />
-        <br></br>
+        {/* <br></br> */}
         <label htmlFor="price">Company Name: </label>
         <br />
         
@@ -110,7 +109,7 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
-        <br></br>
+        {/* <br></br> */}
          <br />
          <br />
                 <input

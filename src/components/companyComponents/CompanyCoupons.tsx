@@ -10,6 +10,7 @@ import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import { useNavigate } from "react-router-dom";
 
+
 function CompanyCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
@@ -44,6 +45,7 @@ function CompanyCoupons() {
       .then(() => {
         getAllCoupons(pageNumber, amountPerPage); 
         alert("Coupon deleted successfully!");
+        navigate("/company/coupons");
       })
       .catch((error) => {
         console.log(error);
@@ -109,7 +111,6 @@ function CompanyCoupons() {
                     <td>{coupon.category}</td>
                     <td>{coupon.endDate}</td>
                     <td>
-                    {/* <EditIcon className="edit-icon"/> */}
                       <EditIcon onClick={() => onUpdateCoupon(coupon)}/>
                     </td>
                     <td>

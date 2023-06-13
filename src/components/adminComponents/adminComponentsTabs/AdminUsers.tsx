@@ -37,7 +37,7 @@ function AdminUsers() {
   function onDeleteClicked(userId: number) {
     // Make an API request to delete the user
     axios
-      .delete(`http://localhost:8080/users/${userId}`)
+      .delete(`http://localhost.157:8080/users/${userId}`)
       .then(() => {
         getAllUsers(pageNumber, amountPerPage);
         alert("User deleted successfully!");

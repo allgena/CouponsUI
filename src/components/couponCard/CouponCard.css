@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
-  width: 220px;
+  width: 250px;
   height: 250px;
   overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
@@ -13,13 +13,13 @@
 
 .img-one {
 
-
   background-size: cover;
   background-position: center center;
 }
 
 h4 {
   color: black;
+
 }
 
 .img-text {
@@ -42,16 +42,14 @@ p {
   color: black;
   font-weight: 700;
   margin-bottom: 8px;
+
 }
 
-/* .h6{
-  color: green;
-} */
 
 .img-text h4 {
   line-height: 5px;
-  padding: 0;
-  margin: 15px 0;
+  padding: 5px;
+  margin: 5px 0;
   font-size: 22px;
 }
 
@@ -67,18 +65,11 @@ p {
   margin-bottom: 8px;
   cursor: pointer;
 }
- .services button:active{
+
+.services button:active {
   transform: scale(0.8);
 }
+
 .single-img:hover .img-text {
   transform: translate(0, 0);
 }
-
-
-
-
-
-
-
-
-

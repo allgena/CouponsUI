@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 
-
 function CouponCard(coupon: ICoupon) {
   let userType = useSelector((state: AppState) => state.logInData.userType);
   let customerName = useSelector((state: AppState) => state.logInData.userName);
@@ -29,8 +28,7 @@ function CouponCard(coupon: ICoupon) {
       console.log(e);
     }
   }
- 
- 
+
   function editCoupon(id: number): void {
     throw new Error("Function not implemented.");
   }
@@ -53,34 +51,26 @@ function CouponCard(coupon: ICoupon) {
   }
 
   let imageURL = "";
-  if (!coupon.imageURL.startsWith("http")){
-    imageURL = "../../img/" + coupon.imageURL; 
-  }
-  else
-   imageURL = coupon.imageURL;
+  if (!coupon.imageURL.startsWith("http")) {
+    imageURL = "../../img/" + coupon.imageURL;
+  } else imageURL = coupon.imageURL;
 
- 
   return (
     <div className="CouponComponent">
       <div className="services">
         <span
           className="single-img img-one"
-          style={{ backgroundImage: `url(${imageURL})` }} >
+          style={{ backgroundImage: `url(${imageURL})` }}
+        >
           <span className="img-text">
             <h4>{coupon.couponName}</h4>
-            <p>{coupon.category}</p>
-            <p>{coupon.companyName}</p>
-            <p>{coupon.description}</p>
-            <p>Price:{coupon.price}$</p>
+            <p>Caterory: {coupon.category}</p>
+            <p>Company: {coupon.companyName}</p>
+            <p>Disc: {coupon.description}</p>
+            <p>Price: {coupon.price}$</p>
             <p>Expiration: {coupon.endDate} </p>
 
             <div className="services-buttons">
-              {/* {userType == "ADMIN" && (
-                <button onClick={() => deleteCoupon(coupon.couponId)}>
-                  Delete
-                </button>
-              )} */}
-              
               {(userType == "CUSTOMER" || userType == "") && (
                 <div className="by-Button">
                   <button onClick={() => addToPurcheses(coupon.couponId)}>
@@ -88,16 +78,9 @@ function CouponCard(coupon: ICoupon) {
                   </button>
                 </div>
               )}
-              {/* {userType == "ADMIN" && (
-                <button onClick={() => editCoupon(coupon.couponId)}>
-                  Edit
-                </button>
-              )} */}
             </div>
           </span>
         </span>
-
-  
       </div>
     </div>
   );

@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .coupons-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 40px ;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .pagination-container {
@@ -38,35 +38,34 @@
   margin: 0 10px;
 }
 
-/* @media (max-width: 768px) {
-  .coupons-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */
 
-@media (max-width: 404px) {
+/* @media (max-width: 404px) {
   .coupons-container {
     grid-template-columns: repeat(1, 1fr);
   }
-}
+} */
 @media (max-width: 405px) and (max-width:799px){
   .coupons-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 4fr);
+    gap: 10px ;
   }
 }
 
 @media (min-width:800px) and (max-width: 1023px) {
   .coupons-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px ;
   }
 }
-@media (min-width: 1024px) and (max-width: 1279px){
+@media (min-width: 1024px) and (max-width: 1419px){
   .coupons-container {
     grid-template-columns: repeat(4, 1fr);
+    gap: 5px ;
   }
+  
 }
 
-@media (min-width:1280px) {
+@media (min-width:1420px) {
   .coupons-container {
     grid-template-columns: repeat(5, 1fr);
   }

@@ -7,8 +7,6 @@ import { AppState } from "../redux/app-state";
 import CouponComponent from "../couponCard/CouponCard";
 import "./CustomerCouponsContainer.css";
 
-
-
 function CustomerCouponsContainer() {
   let dispatch = useDispatch();
 
@@ -17,16 +15,17 @@ function CustomerCouponsContainer() {
   let [amountOfItemsPerPage, setAmountOfItemsPerPage] = useState(10);
   let [couponsList, setCouponsList] = useState([]);
   let couponsListLength = couponsList.length;
-  let selectedCategory = useSelector((state: AppState) => state.selectedCategory);
+  let selectedCategory = useSelector(
+    (state: AppState) => state.selectedCategory
+  );
 
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText === "") {
   }
 
   useEffect(() => {
-    debugger
-        getCouponsByPage(pageNumber, amountOfItemsPerPage);
-  
+    debugger;
+    getCouponsByPage(pageNumber, amountOfItemsPerPage);
   }, [pageNumber, selectedCategory]);
 
   async function getCouponsByPage(
@@ -35,9 +34,9 @@ function CustomerCouponsContainer() {
   ) {
     try {
       let url = `http://localhost:8080/coupons/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountOfItemsPerPage}&category=${selectedCategory}`;
-      debugger      
+      debugger;
       let response = await axios.get(url, {
-        headers: {Authorization: `${localStorage.getItem("token")}`}
+        headers: { Authorization: `${localStorage.getItem("token")}` },
       });
       couponsList = response.data;
       setCouponsList(couponsList);
@@ -47,7 +46,6 @@ function CustomerCouponsContainer() {
       });
     } catch (e: any) {}
   }
-
 
   function onNextClicked() {
     pageNumber++;
@@ -60,9 +58,7 @@ function CustomerCouponsContainer() {
   }
 
   return (
-    
     <div className="customer-container">
-    
       <div className="coupons-container">
         {coupons.map((coupon: ICoupon) => (
           <CouponComponent
@@ -75,7 +71,9 @@ function CustomerCouponsContainer() {
             price={coupon.price}
             startDate={coupon.startDate}
             endDate={coupon.endDate}
-            imageURL={coupon.imageURL} coupon={undefined}          />
+            imageURL={coupon.imageURL}
+            coupon={undefined}
+          />
         ))}
       </div>
       <div className="pagination-container">
@@ -95,7 +93,6 @@ function CustomerCouponsContainer() {
         </button>
         <h5>Page: {pageNumber}</h5>
       </div>
-     
     </div>
   );
 }

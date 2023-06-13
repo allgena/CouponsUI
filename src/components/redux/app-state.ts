@@ -7,23 +7,29 @@ import ISuccessfulLoginData from "../models/ISuccessFulLoginData";
 import IUser from "../models/IUser";
 
 export class AppState {
- 
-  
   public coupons: ICoupon[] = [];
-  public logInData: ISuccessfulLoginData ={
-    id: 0, userName: "", userType: "",
-    companyId: 0
+  public logInData: ISuccessfulLoginData = {
+    id: 0,
+    userName: "",
+    userType: "",
+    companyId: 0,
   };
   public searchValue: string = "";
   public filterredCoupons: ICoupon[] = [];
   public users: IUser[] = [];
-  public userForUpdate:IUser ={
-    userId:0, userType:"", userName:"", companyName:"",  phoneNumber:""
+  public userForUpdate: IUser = {
+    userId: 0,
+    userType: "",
+    userName: "",
+    companyName: "",
+    phoneNumber: "",
   };
   public filterredUsers: IUser[] = [];
   public userDetails: ISuccessfulLoginData = {
-    id: 0, userType: "", userName: "",
-    companyId: 0
+    id: 0,
+    userType: "",
+    userName: "",
+    companyId: 0,
   };
   public companies: ICompany[] = [];
   public companyForUpdate!: ICompany;
@@ -31,15 +37,20 @@ export class AppState {
   public purchases: IPurchase[] = [];
   public getCouponsByPage: ICoupon[] = [];
   public updateCoupon: any;
-  public getPurchases:IPurchase[]=[];
-  public coupon :ICoupon = {
-    couponId: 0, couponName: "", category: "", companyName: "", price: 0,
-    description: "", imageURL: "",
+  public getPurchases: IPurchase[] = [];
+  public coupon: ICoupon = {
+    couponId: 0,
+    couponName: "",
+    category: "",
+    companyName: "",
+    price: 0,
+    description: "",
+    imageURL: "",
     startDate: undefined,
     endDate: undefined,
-    coupon: undefined
+    coupon: undefined,
   };
-  
+
   public selectedCategory: string = "All";
-  public companiesNames:string[]=[];
+  public companiesNames: string[] = [];
 }

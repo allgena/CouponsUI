@@ -1,8 +1,20 @@
-.footer{
+/* .footer{
         margin-top: 6px;
        background-color: grey;
         font-size: 18px;
         color: wheat;
        
 
-}
+} */
+
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 6px;
+        background-color: grey;
+        font-size: 16px;
+        color: wheat;
+      }
+      

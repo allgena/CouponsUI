@@ -3,7 +3,8 @@ import { Route, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 import "../adminComponents/AdminComponent.css"
-import "./CompanyCoupons"
+import "./CompanyCoupons";
+
 
 
 

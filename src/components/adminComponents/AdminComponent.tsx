@@ -55,12 +55,6 @@ function AdminComponent() {
     } else navigate("/admin/purchases");
   }
 
-  // function onCreateCouponClick() {
-  //   debugger;
-  //   if (userType !== "ADMIN") {
-  //     navigate("/login");
-  //   } else navigate("/admin/create/coupons");
-  // }
 
   function onCreateCompanyClick() {
     if (userType !== "ADMIN") {
@@ -91,11 +85,7 @@ function AdminComponent() {
           value="Purchases"
           onClick={onPurchasesButtonClick}
         />
-        {/* <input
-          type="button"
-          value="Coupon Manager"
-          onClick={onCreateCouponClick}
-        /> */}
+
         <input
           type="button"
           value="Create Company"

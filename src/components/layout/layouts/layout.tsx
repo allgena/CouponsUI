@@ -24,7 +24,6 @@ import UpdateCompanyManager from "../../adminCreateItem/UpdateCompany";
 import CreateCoupon from "../../companyComponents/CreateCoupon";
 import CompanyUpdateCoupon from "../../companyComponents/CompanyUpdateCoupon";
 
-
 function Layout() {
   return (
     <div className="layout">
@@ -34,13 +33,11 @@ function Layout() {
         </header>
 
         <main className="main">
-      
           <Routes>
             <Route path="" element={<Home />} />
             <Route path="/coupons" element={<CustomerCouponsContainer />} />
             <Route path="/company" element={<CompanyComponent />} />
             <Route path="/login" element={<Login />} />
-           {/* <Route path="/login" element={<Modal setIsModalOpen={undefined} />} />  */}
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<AdminComponent />} />
             <Route path="/admin/coupons" element={<AdminCoupons />} />
@@ -48,23 +45,80 @@ function Layout() {
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/admin/companies" element={<AdminCompanies />} />
             <Route path="/admin/purchases" element={<AdminPurchases />} />
-            <Route path="/admin/create/companies" element={<CreateCompanyManager/>}/>
-            <Route path="/admin/update/companies" element={<UpdateCompanyManager/>}/>
+            <Route
+              path="/admin/create/companies"
+              element={<CreateCompanyManager />}
+            />
+            <Route
+              path="/admin/update/companies"
+              element={<UpdateCompanyManager />}
+            />
 
             <Route path="/company/coupons" element={<CompanyCoupons />} />
             <Route path="/company/purchases" element={<CompanyPurchases />} />
-            <Route path="/company/coupons/create" element={<CreateCoupon couponId={0} couponName={""}
-            price={0} description={""} startDate={undefined} endDate={undefined} category={""}
-            companyName={""} imageURL={""} coupon={undefined}/>}/>
-            <Route path="/admin/coupons/update" element={<AdminUpdateCoupon couponId={0} couponName={""}
-                price={0} description={""} startDate={undefined} endDate={undefined} category={""}
-                  companyName={""} imageURL={""} coupon={undefined}/>}/>
-            <Route path="/company/coupons/update" element={<CompanyUpdateCoupon couponId={0} couponName={""}
-                price={0} description={""} startDate={undefined} endDate={undefined} category={""}
-                  companyName={""} imageURL={""} coupon={undefined}/>}/>
-            <Route path="/admin/update/user" element={<SingleUser userId={0} userName={""} userType={""} 
-            phoneNumber={""} companyName={""} />} />
-
+            <Route
+              path="/company/coupons/create"
+              element={
+                <CreateCoupon
+                  couponId={0}
+                  couponName={""}
+                  price={0}
+                  description={""}
+                  startDate={undefined}
+                  endDate={undefined}
+                  category={""}
+                  companyName={""}
+                  imageURL={""}
+                  coupon={undefined}
+                />
+              }
+            />
+            <Route
+              path="/admin/coupons/update"
+              element={
+                <AdminUpdateCoupon
+                  couponId={0}
+                  couponName={""}
+                  price={0}
+                  description={""}
+                  startDate={undefined}
+                  endDate={undefined}
+                  category={""}
+                  companyName={""}
+                  imageURL={""}
+                  coupon={undefined}
+                />
+              }
+            />
+            <Route
+              path="/company/coupons/update"
+              element={
+                <CompanyUpdateCoupon
+                  couponId={0}
+                  couponName={""}
+                  price={0}
+                  description={""}
+                  startDate={undefined}
+                  endDate={undefined}
+                  category={""}
+                  companyName={""}
+                  imageURL={""}
+                  coupon={undefined}
+                />
+              }
+            />
+            <Route
+              path="/admin/update/user"
+              element={
+                <SingleUser
+                  userId={0}
+                  userName={""}
+                  userType={""}
+                  phoneNumber={""}
+                  companyName={""}
+                />
+              }
+            />
           </Routes>
         </main>
 

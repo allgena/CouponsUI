@@ -9,20 +9,18 @@ export function reduce(
 ): AppState {
   const newAppState = { ...oldAppState };
 
-
   switch (action.type) {
-    
     case ActionType.GetCoupons:
       newAppState.coupons = action.payload.coupons;
       break;
 
-      case ActionType.SelectedCategory:
+    case ActionType.SelectedCategory:
       newAppState.selectedCategory = action.payload.selectedCategory;
       break;
 
-      case ActionType.GetCoupon:
-        newAppState.coupon=action.payload.coupon;
-        break;
+    case ActionType.GetCoupon:
+      newAppState.coupon = action.payload.coupon;
+      break;
 
     case ActionType.GetUsers:
       newAppState.users = action.payload.users;
@@ -44,23 +42,20 @@ export function reduce(
       newAppState.logInData = action.payload.successfulLoginData;
       break;
 
-     
     case ActionType.ChangeCouponProps:
-    
-
       newAppState.coupon = action.payload.coupon;
       break;
-    
+
     case ActionType.UpdateUser:
-      debugger
+      debugger;
       newAppState.userForUpdate = action.payload.user;
       break;
 
-      case ActionType.UpdateCompany:
-        debugger
-        newAppState.companyForUpdate = action.payload.company;
-        break;
-  
+    case ActionType.UpdateCompany:
+      debugger;
+      newAppState.companyForUpdate = action.payload.company;
+      break;
+
     case ActionType.SearchValue:
       newAppState.searchValue = action.payload.searchValue;
       break;
