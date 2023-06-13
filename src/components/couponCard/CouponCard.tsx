@@ -45,7 +45,9 @@ function CouponCard(coupon: ICoupon) {
         type: ActionType.AddToPurchases,
         payload: { couponToPurchases },
       });
+  
     } catch (e: any) {
+      alert("Coupon updated");
       console.log(e);
     }
   }
@@ -64,11 +66,11 @@ function CouponCard(coupon: ICoupon) {
         >
           <span className="img-text">
             <h4>{coupon.couponName}</h4>
-            <p>Caterory: {coupon.category}</p>
-            <p>Company: {coupon.companyName}</p>
-            <p>Disc: {coupon.description}</p>
-            <p>Price: {coupon.price}$</p>
-            <p>Expiration: {coupon.endDate} </p>
+            <p>Caterory : {coupon.category}</p>
+            <p>Company : {coupon.companyName}</p>
+            <p>Disc : {coupon.description}</p>
+            <p>Price : {coupon.price}$</p>
+            <p>Expiration : {coupon.endDate} </p>
 
             <div className="services-buttons">
               {(userType == "CUSTOMER" || userType == "") && (

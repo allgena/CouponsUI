@@ -45,6 +45,7 @@ function AdminCoupons() {
       .then(() => {
         getAllCoupons(pageNumber, amountPerPage); 
         alert("Coupon deleted successfully!");
+        navigate("/admin/coupons");
       })
       .catch((error) => {
         console.log(error);

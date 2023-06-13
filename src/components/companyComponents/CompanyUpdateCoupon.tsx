@@ -5,12 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import AdminComponent from "../adminComponents/AdminComponent";
-import "./Create.css"
+import "./Create.css";
 import CompanyComponent from "./CompanyComponent";
 
-
 function CompanyUpdateCoupon(props: ICoupon) {
-  
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
   let [couponId, setCouponID] = useState(coupon.couponId);
@@ -22,11 +20,8 @@ function CompanyUpdateCoupon(props: ICoupon) {
   let [category, setCategory] = useState(coupon.category);
   let [companyName, setCompanyName] = useState(coupon.companyName);
   let [imageURL, setImageURL] = useState(coupon.imageURL);
-
-
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
- 
   async function onUpdateCoupon(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/coupons", {
@@ -43,22 +38,17 @@ function CompanyUpdateCoupon(props: ICoupon) {
       console.log(response);
       alert("Coupon updated");
       navigate("/company/coupons");
-
     } catch (e) {
       alert(e);
       console.error(e);
     }
   }
-  // function BackToAdmin() {
-  //   navigate("/admin/tab");
-  // }
 
   return (
     <div className="coupon-creater">
-        <CompanyComponent />
+      <CompanyComponent />
       <h3>Update coupon</h3>
       <div className="inputs-container">
-       
         <label htmlFor="name"> Coupon Name: </label>
         <br />
         <input
@@ -68,7 +58,6 @@ function CompanyUpdateCoupon(props: ICoupon) {
           name="name"
           onChange={(event) => setName(event.target.value)}
         />{" "}
-              
         <br></br>
         <label htmlFor="price">Price: </label>
         <br />
@@ -120,7 +109,6 @@ function CompanyUpdateCoupon(props: ICoupon) {
             </option>
           ))}
         </select>
-
         {/* <input
           type="text"
           defaultValue={`${props.category}`}
@@ -129,7 +117,6 @@ function CompanyUpdateCoupon(props: ICoupon) {
           onChange={(event) => setCategory(event.target.value)}
         />{" "}
         <br /> */}
-        
         <br />
         <label htmlFor="companyId"> Coupon Image URL: </label>
         <br />
@@ -140,8 +127,8 @@ function CompanyUpdateCoupon(props: ICoupon) {
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
-         <br />
-                <input
+        <br />
+        <input
           className="submit-button"
           type="button"
           value="Update"

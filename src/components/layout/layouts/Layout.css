@@ -18,7 +18,9 @@
 
 .layout>header {
   grid-column: span 12;
- 
+  background-position: 0 0 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-image: url(../../../../public/img/fon5-header.jpg);
 }
 

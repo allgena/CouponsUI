@@ -1,6 +1,7 @@
 
 
 .admin-table {
+  position: relative;
   display: inline;
   border: 2px solid wheat;
   padding-top: 9px;

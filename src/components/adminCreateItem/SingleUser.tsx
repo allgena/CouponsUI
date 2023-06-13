@@ -75,6 +75,7 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
+        
         <br></br>
         {/* <br></br> */}
         <label htmlFor="companyId"> Phone: </label>
@@ -99,8 +100,8 @@ function SingleUser(props: IUser) {
         />{" "} */}
      
         <select
-          name="categoryId"
-          value={companiesNames}
+          name="companyName"
+          value={companyName}
           onChange={(event) => setCompanyName(event.target.value)}
         >
           {companiesNames.map((cat, index) => (
@@ -109,6 +110,7 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
+        
         {/* <br></br> */}
          <br />
          <br />

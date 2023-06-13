@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ISuccessfulLoginData from "../models/ISuccessFulLoginData";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionType } from "../redux/action-type";
+// import  Modal  from "react-modal";
 
 
 function Login() {
@@ -93,6 +94,8 @@ function Login() {
 
 export default Login;
 
+// Modal.setAppElement("#root")
+
 // function Login() {
 //   const [isModalOpen, setIsModalOpen] = useState(false);
 //   let [userName, setUserName] = useState("");
@@ -100,11 +103,7 @@ export default Login;
 //   const navigate = useNavigate();
 //   let dispatch = useDispatch();
 
-// function Modal({ setIsModalOpen}) {
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const [userName, setUserName] = useState("");
-//   const [password, setPassword] = useState("");
+
 
 //   async function onLogin(event:any) {
 //     try {
@@ -136,7 +135,7 @@ export default Login;
 //       setIsModalOpen(false);
 //     } catch (e:any) {
 //       console.error(e);
-//   //   setIsModalOpen(false); // Закрываем модальное окно после успешного входа
+//     setIsModalOpen(false); // Закрываем модальное окно после успешного входа
 //   // } catch (e) {
 //   //   console.error(e);
    
@@ -150,15 +149,20 @@ export default Login;
 
 //   function openRegisterModal() {
 //     // setIsModalOpen(true);
-//     navigate("/register");
+//     // navigate("/register");
 //     setIsModalOpen(false); // Закрываем модальное окно при открытии окна регистрации
 //   }
   
 
 //   return (
 //     <div className="modal">
-    
+        
 //           <div className="modal-content">
+//           <Modal
+//                 isOpen={isModalOpen}
+//                 // onAfterOpen={afterOpenModal}
+//                 // onRequestClose={closeModal}
+//                 >
 //             <h3>Sign In</h3>
 //             <div className="#">
 //               <input
@@ -188,6 +192,7 @@ export default Login;
 //             </p>
 //             <br />
 //             <button onClick={() => setIsModalOpen(false)}>Close</button>
+//             </Modal>
 //           </div>
 //         </div>
    

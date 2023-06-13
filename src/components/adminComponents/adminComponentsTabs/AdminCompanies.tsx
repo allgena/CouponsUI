@@ -52,6 +52,7 @@ function AdminCompanies() {
       await axios.delete(`http://localhost:8080/companies/${companyId}`);
       getCompanies(); 
       alert("Company deleted successfully!");
+      navigate("/admin/companies");
     } catch (error) {
       console.log(error);
     }
@@ -104,7 +105,7 @@ function AdminCompanies() {
                 <td>{company.address}</td>
                 <td>{company.numberOfPurchases}</td>
                 <td>
-                <EditIcon className="edit-icon"onClick={() => onUpdateCompany(company)}/>
+                <EditIcon className="edit-icon" onClick={() => onUpdateCompany(company)}/>
                 </td>
                 <td>
                   <DeleteForeverIcon className="delete-icon"

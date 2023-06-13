@@ -1,6 +1,5 @@
 import Footer from "../footer/Footer";
 import "../layouts/Layout.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "../../login/Register";
 import Login from "../../login/Login";
 import Header from "../header/Header";
@@ -10,19 +9,19 @@ import AdminUsers from "../../adminComponents/adminComponentsTabs/AdminUsers";
 import AdminPurchases from "../../adminComponents/adminComponentsTabs/AdminPurchases";
 import AdminCustomers from "../../adminComponents/adminComponentsTabs/AdminCustomers";
 import AdminCompanies from "../../adminComponents/adminComponentsTabs/AdminCompanies";
-import AdminComponent from "../../adminComponents/AdminComponent";
 import Home from "../../home/Home";
-import CreateCompany from "../../adminCreateItem/CreateCompany";
 import CreateCompanyManager from "../../adminCreateItem/CreateCompany";
 import AdminUpdateCoupon from "../../adminCreateItem/AdminUpdateCoupon";
 import CompanyComponent from "../../companyComponents/CompanyComponent";
 import CompanyPurchases from "../../companyComponents/CompanyPurchases";
 import CompanyCoupons from "../../companyComponents/CompanyCoupons";
 import SingleUser from "../../adminCreateItem/SingleUser";
-import Modal from "../../login/Login";
 import UpdateCompanyManager from "../../adminCreateItem/UpdateCompany";
 import CreateCoupon from "../../companyComponents/CreateCoupon";
 import CompanyUpdateCoupon from "../../companyComponents/CompanyUpdateCoupon";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GuardedRoute from "../../GuardedRoute";
+import AdminComponent from "../../adminComponents/AdminComponent";
 
 function Layout() {
   return (
@@ -34,6 +33,7 @@ function Layout() {
 
         <main className="main">
           <Routes>
+          
             <Route path="" element={<Home />} />
             <Route path="/coupons" element={<CustomerCouponsContainer />} />
             <Route path="/company" element={<CompanyComponent />} />

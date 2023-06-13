@@ -23,8 +23,7 @@ function CompanyCoupons() {
   }, [pageNumber]);
 
   let coupons = useSelector((state: AppState) => state.coupons);
-
-  let subText = useSelector((state: AppState) => state.searchValue);
+let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
   }
 
@@ -52,9 +51,6 @@ function CompanyCoupons() {
       });
   }
 
-  
-
-
   function isSubtextNull() {
     subText = subText.trim();
     if (!subText) {
@@ -68,16 +64,14 @@ function CompanyCoupons() {
       payload: { coupon: coupon },
     });
     navigate("/company/coupons/update");
-    
-  }
+    }
   
   
   function onNextClicked() {
         pageNumber++;
         setPageNumber(pageNumber);
       }
-    
-      function onBackClicked() {
+    function onBackClicked() {
         pageNumber--;
         setPageNumber(pageNumber);
       }
@@ -111,7 +105,7 @@ function CompanyCoupons() {
                     <td>{coupon.category}</td>
                     <td>{coupon.endDate}</td>
                     <td>
-                      <EditIcon onClick={() => onUpdateCoupon(coupon)}/>
+                      <EditIcon className="edit-icon"onClick={() => onUpdateCoupon(coupon)}/>
                     </td>
                     <td>
                       <DeleteForeverIcon className="delete-icon" onClick={() => onDeleteClicked(coupon.couponId)}/>

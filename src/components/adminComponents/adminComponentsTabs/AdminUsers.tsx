@@ -41,6 +41,7 @@ function AdminUsers() {
       .then(() => {
         getAllUsers(pageNumber, amountPerPage);
         alert("User deleted successfully!");
+        navigate("/admin/users");
       })
       .catch((error) => {
         console.log(error);

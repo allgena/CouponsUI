@@ -63,6 +63,7 @@ function AdminComponent() {
   }
 
   return (
+ 
     <div className="admin-page">
       <h4>
         Hello, {useSelector((state: AppState) => state.logInData.userName)}
@@ -93,6 +94,7 @@ function AdminComponent() {
         />
       </div>
     </div>
+  
   );
 }
 

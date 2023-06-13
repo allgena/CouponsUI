@@ -1,4 +1,4 @@
-.customer-container {
+/* .customer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,15 +8,15 @@
 .coupons-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 40px ;
-  margin-bottom: 15px;
+  gap: 25px ;
+  margin-bottom: 17px;
 }
 
 .pagination-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .pagination-container >.button {
@@ -30,24 +30,20 @@
 }
 
 
-.pagination-container button:active {
-  transform: scale(0.8);
-}
+
 
 .pagination-container h5 {
   margin: 0 10px;
 }
 
+.pagination-container button:active {
+  transform: scale(0.8);
+}
 
-/* @media (max-width: 404px) {
-  .coupons-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-} */
 @media (max-width: 405px) and (max-width:799px){
   .coupons-container {
-    grid-template-columns: repeat(2, 4fr);
-    gap: 10px ;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px ;
   }
 }
 
@@ -60,7 +56,7 @@
 @media (min-width: 1024px) and (max-width: 1419px){
   .coupons-container {
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px ;
+    gap: 15px ;
   }
   
 }
@@ -69,6 +65,66 @@
   .coupons-container {
     grid-template-columns: repeat(5, 1fr);
   }
+} */
+
+
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35px;
 }
 
 
+
+.coupons-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 30px;
+  margin-bottom: 17px;
+}
+
+@media screen and (min-width: 480px) {
+  .coupons-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .coupons-container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .coupons-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .coupons-container {
+    grid-template-columns: repeat(5, 1fr); 
+  }
+}
+
+.pagination-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.pagination-container > .button {
+  background: white;
+  color: black;
+  padding: 2px 15px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-container h5 {
+  margin: 0 10px;
+}

@@ -1,5 +1,5 @@
 .marquee-infinite {
-    margin: 100px auto;
+    margin: 80px auto;
     max-width: 100%;
     overflow: hidden;
 }
@@ -7,9 +7,9 @@
 .marquee-infinite div {
     display: flex;
     width: 300%;
-
     animation: marquee-infinite 25s linear infinite;
 }
+
 
 .img1 {
     background-image: url(../../img/electro2.jpg);
@@ -27,7 +27,7 @@
 }
 
 .img4 {
-    background-image: url(../../img/travel100.jpg);
+    background-image: url(../../img/home30004.jpg);
     background-position: center;
 
 }
@@ -40,22 +40,21 @@
 }
 
 .marquee-infinite img {
-    height: 450px;
+    height: 480px;
     width: 22%;
     background-position: cover;
     cursor: pointer;
- }
+}
 
- .marquee-infinite img:hover{
-      border: 5px solid rgb(26, 218, 26); 
- }
+.marquee-infinite img:hover {
+    transform: scale(1.04);
 
+}
 
 .marquee-infinite:hover div {
     animation-play-state: paused;
-    
-}
 
+}
 
 @keyframes marquee-infinite {
     0% {
@@ -66,5 +65,3 @@
         transform: translateX(-50%);
     }
 }
-
-
