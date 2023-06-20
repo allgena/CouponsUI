@@ -1,16 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import AdminComponent from "../adminComponents/AdminComponent";
 import "./Create.css"
 import IUser from "../models/IUser";
+import { ActionType } from "../redux/action-type";
 
 
 function SingleUser(props: IUser) {
-  
+  let [pageNumber, setPageNumber] = useState();
+
   let navigate = useNavigate();
+  let dispatch = useDispatch();
+ 
   let user = useSelector((state: AppState) => state.userForUpdate);
   
   let [userId, setUserId] = useState(user.userId);
@@ -18,8 +22,21 @@ function SingleUser(props: IUser) {
   let [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
   let [companyName, setCompanyName] = useState(user.companyName);
   let [userType, setUserType] = useState(user.userType);
-
   let companiesNames = useSelector((state: AppState) => state.companiesNames);
+
+  useEffect(() => {
+    getCompaniesNames();
+  },[]);
+
+  async function getCompaniesNames() {
+    let url = `http://localhost:8080/companies/names`;
+
+    let response = await axios.get(url);
+    dispatch({
+      type: ActionType.GetCompaniesNames,
+      payload: { companiesNames: response.data },
+    });
+  }
 
   let userTypes = ["COMPANY", "ADMIN", "CUSTOMER"];
 

@@ -16,6 +16,7 @@ function CompanyPurchases() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 12;
   let dispatch = useDispatch();
+  let userCompanyId = useSelector((state: AppState) => state.logInData.companyId);
 
   useEffect(() => {
     getPurchases();
@@ -27,7 +28,7 @@ function CompanyPurchases() {
   }
 
   async function getPurchases() {
-    let url = `http://localhost:8080/purchases/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
+    let url = `http://localhost:8080/purchases/company?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}&companyId=${userCompanyId}`;
   
     let response = await axios.get(url);
     let purchasesArray = response.data;

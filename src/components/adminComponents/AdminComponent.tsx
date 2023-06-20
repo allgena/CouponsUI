@@ -14,19 +14,7 @@ function AdminComponent() {
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  useEffect(() => {
-    getCompaniesNames();
-  });
-
-  async function getCompaniesNames() {
-    let url = `http://localhost:8080/companies/names`;
-
-    let response = await axios.get(url);
-    dispatch({
-      type: ActionType.GetCompaniesNames,
-      payload: { companiesNames: response.data },
-    });
-  }
+ 
 
   function onCouponsButtonClick() {
     if (userType !== "ADMIN") {

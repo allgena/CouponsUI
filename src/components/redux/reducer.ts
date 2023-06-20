@@ -59,6 +59,7 @@ export function reduce(
       newAppState.searchValue = action.payload.searchValue;
       break;
     case ActionType.GetCompaniesNames:
+      debugger
       newAppState.companiesNames = action.payload.companiesNames;
       break;
 
