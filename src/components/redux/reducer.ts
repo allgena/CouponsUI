@@ -52,7 +52,6 @@ export function reduce(
       break;
 
     case ActionType.UpdateCompany:
-      debugger;
       newAppState.companyForUpdate = action.payload.company;
       break;
 

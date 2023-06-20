@@ -18,7 +18,7 @@ function AdminCompanies() {
   let navigate =  useNavigate();
 
   useEffect(() => {
-    getCompanies();
+    getCompanies(pageNumber, amountPerPage);
   }, [pageNumber]);
 
   let companies = useSelector((state: AppState) => state.companies);
@@ -27,7 +27,7 @@ function AdminCompanies() {
   if (subText == "") {
   }
 
-  async function getCompanies() {
+  async function getCompanies(pageNumber: number, amountPerPage: number) {
     let url = `http://localhost:8080/companies/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
 
     let response = await axios.get(url);
@@ -50,7 +50,7 @@ function AdminCompanies() {
   async function deleteCompany(companyId: number) {
     try {
       await axios.delete(`http://localhost:8080/companies/${companyId}`);
-      getCompanies(); 
+      getCompanies(pageNumber,amountPerPage); 
       alert("Company deleted successfully!");
       navigate("/admin/companies");
     } catch (error) {
@@ -95,7 +95,7 @@ function AdminCompanies() {
         </thead>
         <tbody>
           {companies
-            .filter((company) => company.companyName.includes(subText))
+            .filter((company) =>company.companyName.includes(subText))
             .map((company, index) => (
               // <tr key={company.companyId}>
               <tr key={company.companyId}>

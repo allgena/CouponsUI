@@ -15,15 +15,16 @@ function AdminPurchases() {
   let dispatch = useDispatch();
 
   useEffect(() => {
-    getPurchases();
+    getPurchases(pageNumber, amountPerPage);
   }, [pageNumber]);
   
   let purchases = useSelector((state: AppState) => state.purchases);
+  debugger
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText === "") {
   }
 
-  async function getPurchases() {
+  async function getPurchases(pageNumber: number, amountPerPage: number) {
     let url = `http://localhost:8080/purchases/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
   
     let response = await axios.get(url);

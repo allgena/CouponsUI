@@ -47,8 +47,7 @@ function CouponCard(coupon: ICoupon) {
       });
   
     } catch (e: any) {
-      alert("Coupon updated");
-      console.log(e);
+    console.log(e);
     }
   }
 
