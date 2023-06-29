@@ -13,7 +13,7 @@ function CouponCard(coupon: ICoupon) {
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  let [modalIsOpen, setModalIsOpen] = useState(false);
+  // let [modalIsOpen, setModalIsOpen] = useState(false);
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
   }
@@ -45,7 +45,7 @@ function CouponCard(coupon: ICoupon) {
         type: ActionType.AddToPurchases,
         payload: { couponToPurchases },
       });
-  
+  alert("Thank for your purchase")
     } catch (e: any) {
     console.log(e);
     }
@@ -65,20 +65,18 @@ function CouponCard(coupon: ICoupon) {
         >
           <span className="img-text">
             <h4>{coupon.couponName}</h4>
-            <p>Caterory : {coupon.category}</p>
+            <p>Caterory :  {coupon.category}</p>
             <p>Company : {coupon.companyName}</p>
-            <p>Disc : {coupon.description}</p>
-            <p>Price : {coupon.price}$</p>
+            <p>Discription : {coupon.description}</p>
+            <p>Price : <a>{coupon.price}$</a></p>
             <p>Expiration : {coupon.endDate} </p>
 
             <div className="services-buttons">
-              {(userType == "CUSTOMER" || userType == "") && (
                 <div className="by-Button">
                   <button onClick={() => addToPurcheses(coupon.couponId)}>
                     Buy now
                   </button>
                 </div>
-              )}
             </div>
           </span>
         </span>

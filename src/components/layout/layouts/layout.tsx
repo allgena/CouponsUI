@@ -20,7 +20,6 @@ import UpdateCompanyManager from "../../adminCreateItem/UpdateCompany";
 import CreateCoupon from "../../companyComponents/CreateCoupon";
 import CompanyUpdateCoupon from "../../companyComponents/CompanyUpdateCoupon";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GuardedRoute from "../../GuardedRoute";
 import AdminComponent from "../../adminComponents/AdminComponent";
 
 function Layout() {

@@ -9,7 +9,7 @@ import AdminComponent from "../AdminComponent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import ICoupon from "../../models/ICoupon";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import AdminUpdateCoupon from "../../adminCreateItem/AdminUpdateCoupon";
 
 function AdminCoupons() {

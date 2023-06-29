@@ -53,7 +53,7 @@ function Login() {
     }
   }
   return (
-    <body>
+    <body  className="login-page">
       <div className="presentation">
         <div className="Login">
           <h3>Sign In</h3>
@@ -79,7 +79,7 @@ function Login() {
             <input type="button" value="Login" onClick={onLogin} />
             <br />
           </div>
-          <p>
+          <p id="member">
             Not a member?{" "}
             <a id="sign-up" href="http://localhost:3000/register">
               Sign Up

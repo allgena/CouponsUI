@@ -24,7 +24,7 @@ function CustomerCouponsContainer() {
   }
 
   useEffect(() => {
-    debugger;
+ 
     getCouponsByPage(pageNumber, amountOfItemsPerPage);
   }, [pageNumber, selectedCategory]);
 

@@ -8,7 +8,7 @@ function Home() {
     navigate("/coupons");
   }
   return (
-    // <div className="home">
+  
       <div className="marquee-infinite" onClick={() => onHomeClick()}>
         <div>
           <span>

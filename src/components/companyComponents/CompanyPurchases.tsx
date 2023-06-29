@@ -1,11 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import "../adminComponents/adminComponentsTabs/AdminTab.css";
-
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
 import AdminComponent from "../adminComponents/AdminComponent";
 import { ActionType } from "../redux/action-type";
 import { AppState } from "../redux/app-state";
@@ -73,7 +69,7 @@ function CompanyPurchases() {
           {purchases
             .filter((purchase: any) => purchase.couponName.includes(subText))
             .map((purchase, index) => (
-              <tr key={purchase.customerId}>
+              <tr key={purchase.id}>
                 <td>{index+1}</td>
                 <td>{purchase.customerName}</td>
                 <td>{purchase.couponName}</td>

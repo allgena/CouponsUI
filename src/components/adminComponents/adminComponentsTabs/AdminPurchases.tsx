@@ -5,27 +5,28 @@ import { ActionType } from "../../redux/action-type";
 import { AppState } from "../../redux/app-state";
 import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from "react-router-dom";
 
 
 function AdminPurchases() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 12;
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getPurchases(pageNumber, amountPerPage);
   }, [pageNumber]);
   
   let purchases = useSelector((state: AppState) => state.purchases);
-  debugger
+ 
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText === "") {
   }
 
   async function getPurchases(pageNumber: number, amountPerPage: number) {
     let url = `http://localhost:8080/purchases/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
+     
   
     let response = await axios.get(url);
     let purchasesArray = response.data;
@@ -70,7 +71,7 @@ function AdminPurchases() {
           {purchases
             .filter((purchase: any) => purchase.couponName.includes(subText))
             .map((purchase, index) => (
-              <tr key={purchase.customerId}>
+              <tr key={purchase.id}>
                 <td>{index+1}</td>
                 <td>{purchase.customerName}</td>
                 <td>{purchase.couponName}</td>
@@ -83,7 +84,7 @@ function AdminPurchases() {
       <div>
         <input
           type="button"
-          disabled={pageNumber === 1}
+          disabled={pageNumber == 1}
           value="back"
           onClick={() => onBackClicked()}
         />
