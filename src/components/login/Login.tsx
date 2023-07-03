@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import ISuccessfulLoginData from "../models/ISuccessFulLoginData";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionType } from "../redux/action-type";
-// import  Modal  from "react-modal";
-
 
 function Login() {
   let [userName, setUserName] = useState("");
@@ -53,7 +51,7 @@ function Login() {
     }
   }
   return (
-    <body  className="login-page">
+    <body className="login-page">
       <div className="presentation">
         <div className="Login">
           <h3>Sign In</h3>
@@ -103,8 +101,6 @@ export default Login;
 //   const navigate = useNavigate();
 //   let dispatch = useDispatch();
 
-
-
 //   async function onLogin(event:any) {
 //     try {
 //       const response = await axios.post("http://localhost:8080/users/login", {
@@ -118,7 +114,7 @@ export default Login;
 //       let strSuccessfulLoginResponse: string = decodedToken.sub;
 
 //       let successfulLoginResponse = JSON.parse(strSuccessfulLoginResponse);
-  
+
 //       dispatch({
 //                  type: ActionType.LogInData,
 //                  payload: { successfulLoginData: successfulLoginResponse },
@@ -138,7 +134,7 @@ export default Login;
 //     setIsModalOpen(false); // Закрываем модальное окно после успешного входа
 //   // } catch (e) {
 //   //   console.error(e);
-   
+
 //       if (e.response?.data?.error?.message) {
 //         alert(e.response.data.error.message);
 //       } else {
@@ -152,11 +148,10 @@ export default Login;
 //     // navigate("/register");
 //     setIsModalOpen(false); // Закрываем модальное окно при открытии окна регистрации
 //   }
-  
 
 //   return (
 //     <div className="modal">
-        
+
 //           <div className="modal-content">
 //           <Modal
 //                 isOpen={isModalOpen}
@@ -195,11 +190,8 @@ export default Login;
 //             </Modal>
 //           </div>
 //         </div>
-   
-      
 
 //   );
 // }
 
 // export default Modal;
-

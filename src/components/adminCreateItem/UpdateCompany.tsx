@@ -93,12 +93,7 @@ function UpdateCompanyManager() {
           onClick={onUpdateCompany}
         />{" "}
          <br />
-        <input
-          className="submit-button"
-          type="button"
-          value="Delete"
-          onClick={onDeleteCompany}
-        />{" "}
+
        
       </div>
   

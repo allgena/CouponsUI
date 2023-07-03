@@ -28,5 +28,5 @@ export enum ActionType {
   DeleteCompany,
   SelectedCategory,
   UpdateUser,
-  UpdateCompany
+  UpdateCompany,
 }

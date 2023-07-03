@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionType } from "../../redux/action-type";
 import { AppState } from "../../redux/app-state";
-import Search from "../../search/Search";
 import "./AdminTab.css";
 import AdminComponent from "../AdminComponent";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -13,9 +12,9 @@ import { useNavigate } from "react-router-dom";
 
 function AdminCompanies() {
   let [pageNumber, setPageNumber] = useState(1);
-  let amountPerPage: number = 10;
+  let amountPerPage: number = 12;
   let dispatch = useDispatch();
-  let navigate =  useNavigate();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getCompanies(pageNumber, amountPerPage);
@@ -45,12 +44,10 @@ function AdminCompanies() {
     }
   }
 
-  
-
   async function deleteCompany(companyId: number) {
     try {
       await axios.delete(`http://localhost:8080/companies/${companyId}`);
-      getCompanies(pageNumber,amountPerPage); 
+      getCompanies(pageNumber, amountPerPage);
       alert("Company deleted successfully!");
       navigate("/admin/companies");
     } catch (error) {
@@ -69,12 +66,13 @@ function AdminCompanies() {
   }
 
   function onUpdateCompany(company: ICompany): void {
-    debugger
+    debugger;
     dispatch({
       type: ActionType.UpdateCompany,
       payload: { company: company },
     });
-    navigate("/admin/update/companies");  }
+    navigate("/admin/update/companies");
+  }
 
   return (
     <div className="cards-container">
@@ -95,9 +93,8 @@ function AdminCompanies() {
         </thead>
         <tbody>
           {companies
-            .filter((company) =>company.companyName.includes(subText))
+            .filter((company) => company.companyName.includes(subText))
             .map((company, index) => (
-              // <tr key={company.companyId}>
               <tr key={company.companyId}>
                 <td>{index + 1}</td>
                 <td>{company.companyName}</td>
@@ -105,10 +102,14 @@ function AdminCompanies() {
                 <td>{company.address}</td>
                 <td>{company.numberOfPurchases}</td>
                 <td>
-                <EditIcon className="edit-icon" onClick={() => onUpdateCompany(company)}/>
+                  <EditIcon
+                    className="edit-icon"
+                    onClick={() => onUpdateCompany(company)}
+                  />
                 </td>
                 <td>
-                  <DeleteForeverIcon className="delete-icon"
+                  <DeleteForeverIcon
+                    className="delete-icon"
                     onClick={() => deleteCompany(company.companyId)}
                   />
                 </td>

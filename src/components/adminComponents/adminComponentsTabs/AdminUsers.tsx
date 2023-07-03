@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 function AdminUsers() {
   let [pageNumber, setPageNumber] = useState(1);
-  let amountPerPage: number = 10;
+  let amountPerPage: number = 12;
   let dispatch = useDispatch();
   let navigate = useNavigate();
   useEffect(() => {

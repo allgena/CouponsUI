@@ -5,11 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import AdminComponent from "../adminComponents/AdminComponent";
-import "./Create.css"
-
+import "./Create.css";
 
 function AdminUpdateCoupon(props: ICoupon) {
-  
   let navigate = useNavigate();
   let coupon = useSelector((state: AppState) => state.coupon);
   let [couponId, setCouponID] = useState(coupon.couponId);
@@ -22,10 +20,8 @@ function AdminUpdateCoupon(props: ICoupon) {
   let [companyName, setCompanyName] = useState(coupon.companyName);
   let [imageURL, setImageURL] = useState(coupon.imageURL);
 
-
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
- 
   async function onUpdateCoupon(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/coupons", {
@@ -50,10 +46,9 @@ function AdminUpdateCoupon(props: ICoupon) {
 
   return (
     <div className="coupon-creater">
-        <AdminComponent />
+      <AdminComponent />
       <h3>Update coupon</h3>
       <div className="inputs-container">
-       
         <label htmlFor="name"> Coupon Name: </label>
         <br />
         <input
@@ -134,8 +129,8 @@ function AdminUpdateCoupon(props: ICoupon) {
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
-         <br />
-                <input
+        <br />
+        <input
           className="submit-button"
           type="button"
           value="Update"

@@ -8,7 +8,7 @@
   overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
   transition: .5s;
-  
+
 }
 
 .single-img:hover {
@@ -51,8 +51,9 @@ p {
   margin-left: 20px;
 
 }
-a{
- 
+
+a {
+
   font-size: 17px;
 }
 

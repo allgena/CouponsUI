@@ -14,7 +14,7 @@ import AdminUpdateCoupon from "../../adminCreateItem/AdminUpdateCoupon";
 
 function AdminCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
-  let amountPerPage: number = 10;
+  let amountPerPage: number = 12;
   let dispatch = useDispatch();
   let navigate = useNavigate();
 

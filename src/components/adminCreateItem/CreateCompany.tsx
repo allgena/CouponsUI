@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminComponent from "../adminComponents/AdminComponent";
 
-
 function CreateCompanyManager() {
   let navigate = useNavigate();
 
@@ -32,7 +31,6 @@ function CreateCompanyManager() {
     }
   }
 
- 
   function BackToAdminPage() {
     navigate("/admin");
   }
@@ -41,8 +39,7 @@ function CreateCompanyManager() {
     <div className="company-creater">
       <AdminComponent />
       <h3>Create company</h3>
-      <div className="inputs-container"> 
-
+      <div className="inputs-container">
         <br />
         <input
           type="text"
@@ -71,9 +68,7 @@ function CreateCompanyManager() {
           value="Create"
           onClick={onCreateCompany}
         />{" "}
-       
       </div>
-  
     </div>
   );
 }

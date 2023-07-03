@@ -5,28 +5,29 @@ import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import AdminComponent from "../adminComponents/AdminComponent";
-import "./Create.css"
+import "./Create.css";
 import CompanyComponent from "./CompanyComponent";
-
 
 function CreateCoupon(props: ICoupon) {
   let navigate = useNavigate();
   let [couponName, setName] = useState("");
-  let [price, setPrice] = useState(0.);
+  let [price, setPrice] = useState(0);
   let [description, setDescription] = useState("");
   let [startDate, setStartDate] = useState("");
   let [endDate, setEndDate] = useState("");
   let [category, setCategory] = useState("FOOD");
   let [imageURL, setImageURL] = useState("");
 
-  let companyName = useSelector((state: AppState) => state.logInData.companyName);
+  let companyName = useSelector(
+    (state: AppState) => state.logInData.companyName
+  );
 
- debugger
+  debugger;
   let categories = ["FOOD", "TOYS", "COSMETICS", "ELECTRONICS"];
 
   async function onCreateCoupon(event: any) {
     try {
-      debugger
+      debugger;
       const response = await axios.post("http://localhost:8080/coupons", {
         couponName,
         price,
@@ -46,13 +47,11 @@ function CreateCoupon(props: ICoupon) {
     }
   }
 
-
   return (
     <div className="coupon-creater">
-        <CompanyComponent />
+      <CompanyComponent />
       <h3>Create Coupon</h3>
       <div className="inputs-container">
-       
         <label htmlFor="name"> Coupon Name: </label>
         <br />
         <input
@@ -63,7 +62,6 @@ function CreateCoupon(props: ICoupon) {
           onChange={(event) => setName(event.target.value)}
         />{" "}
         <br />
-       
         <label htmlFor="price">Price: </label>
         <br />
         <input
@@ -114,7 +112,6 @@ function CreateCoupon(props: ICoupon) {
             </option>
           ))}
         </select>
-
         {/* <input
           type="text"
           defaultValue={`${props.category}`}
@@ -123,7 +120,6 @@ function CreateCoupon(props: ICoupon) {
           onChange={(event) => setCategory(event.target.value)}
         />{" "}
         <br /> */}
-        
         <br />
         <label htmlFor="companyId"> Coupon Image URL: </label>
         <br />
@@ -134,7 +130,7 @@ function CreateCoupon(props: ICoupon) {
           name="imageURL"
           onChange={(event) => setImageURL(event.target.value)}
         />{" "}
-         <br />
+        <br />
         <input
           className="submit-button"
           type="button"

@@ -45,9 +45,9 @@ function CouponCard(coupon: ICoupon) {
         type: ActionType.AddToPurchases,
         payload: { couponToPurchases },
       });
-  alert("Thank for your purchase")
+      alert("Thank for your purchase");
     } catch (e: any) {
-    console.log(e);
+      console.log(e);
     }
   }
 
@@ -65,18 +65,20 @@ function CouponCard(coupon: ICoupon) {
         >
           <span className="img-text">
             <h4>{coupon.couponName}</h4>
-            <p>Caterory :  {coupon.category}</p>
+            <p>Caterory : {coupon.category}</p>
             <p>Company : {coupon.companyName}</p>
             <p>Discription : {coupon.description}</p>
-            <p>Price : <a>{coupon.price}$</a></p>
+            <p>
+              Price : <a>{coupon.price}$</a>
+            </p>
             <p>Expiration : {coupon.endDate} </p>
 
             <div className="services-buttons">
-                <div className="by-Button">
-                  <button onClick={() => addToPurcheses(coupon.couponId)}>
-                    Buy now
-                  </button>
-                </div>
+              <div className="by-Button">
+                <button onClick={() => addToPurcheses(coupon.couponId)}>
+                  Buy now
+                </button>
+              </div>
             </div>
           </span>
         </span>

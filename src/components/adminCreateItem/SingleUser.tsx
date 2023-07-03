@@ -4,19 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../redux/app-state";
 import AdminComponent from "../adminComponents/AdminComponent";
-import "./Create.css"
+import "./Create.css";
 import IUser from "../models/IUser";
 import { ActionType } from "../redux/action-type";
-
 
 function SingleUser(props: IUser) {
   let [pageNumber, setPageNumber] = useState();
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
- 
+
   let user = useSelector((state: AppState) => state.userForUpdate);
-  
+
   let [userId, setUserId] = useState(user.userId);
   let [userName, setUserName] = useState(user.userName);
   let [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
@@ -26,7 +25,7 @@ function SingleUser(props: IUser) {
 
   useEffect(() => {
     getCompaniesNames();
-  },[]);
+  }, []);
 
   async function getCompaniesNames() {
     let url = `http://localhost:8080/companies/names`;
@@ -40,7 +39,6 @@ function SingleUser(props: IUser) {
 
   let userTypes = ["COMPANY", "ADMIN", "CUSTOMER"];
 
- 
   async function onUpdateUser(event: any) {
     try {
       const response = await axios.put("http://localhost:8080/users", {
@@ -49,7 +47,6 @@ function SingleUser(props: IUser) {
         userType,
         phoneNumber,
         companyName,
-
       });
       console.log(response);
       alert("User updated");
@@ -57,16 +54,14 @@ function SingleUser(props: IUser) {
     } catch (e) {
       alert(e);
       console.error(e);
-      
     }
   }
 
   return (
     <div className="coupon-creater">
-        <AdminComponent />
+      <AdminComponent />
       <h3>Update user</h3>
       <div className="inputs-container">
-       
         <label htmlFor="name"> User Name: </label>
         <br />
         <input
@@ -76,7 +71,6 @@ function SingleUser(props: IUser) {
           name="name"
           onChange={(event) => setUserName(event.target.value)}
         />{" "}
-        
         {/* <br /> */}
         <br />
         <label htmlFor="name"> User Type: </label>
@@ -92,7 +86,6 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
-        
         <br></br>
         {/* <br></br> */}
         <label htmlFor="companyId"> Phone: </label>
@@ -104,18 +97,16 @@ function SingleUser(props: IUser) {
           name="companyId"
           onChange={(event) => setPhoneNumber(event.target.value)}
         />{" "}
-         <br />
+        <br />
         {/* <br></br> */}
         <label htmlFor="price">Company Name: </label>
         <br />
-        
         {/* <input
           type="text"
           defaultValue={`${user.companyName}`}
           name="price"
           onChange={(event) => setCompanyName(event.target.value)}
         />{" "} */}
-     
         <select
           name="companyName"
           value={companyName}
@@ -127,11 +118,10 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
-        
         {/* <br></br> */}
-         <br />
-         <br />
-                <input
+        <br />
+        <br />
+        <input
           className="submit-button"
           type="button"
           value="Update"

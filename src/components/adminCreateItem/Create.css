@@ -23,7 +23,7 @@
     font-size: 15px;
 }
 
-.coupon-creater .input  {
+.coupon-creater .input {
     border: 1px solid rgba(252, 252, 252, 0.4);
     background-color: white;
     width: 200px;
@@ -46,5 +46,3 @@
     font-size: 18px;
     transition-duration: 0.4s;
 }
-
-

@@ -1,90 +1,83 @@
+.components {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: auto;
+}
+
+.logo {
+  position: relative;
+  margin-left: -30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo:hover {
+
+  transform: scale(.95);
+}
+
+.search {
+  position: relative;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.search input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 150px;
+  margin-bottom: auto;
+}
+
+.search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: auto;
+}
+
+.category-dropdown {
+  margin: auto;
+}
+
+.category-dropdown select {
+  margin-left: auto;
+  padding: 5px 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+
+}
+
+.loginButton {
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+.userName {
+  position: relative;
+  margin-left: 60px;
+  font-size: 16px;
+  margin-bottom: auto;
+}
 
 
-      .components {
+@media screen and (min-width: 300px) and (max-width: 769px) {
 
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: auto;
-      }
-      
-      .logo {
-        font-size: 20px;
-        font-weight: bold;
-      }
-      .logo:hover {
-       
-        transform: scale(.95);
-      }
-      
-      .search {
-        position: relative;
-        margin-left: 20px;
-        margin-bottom: auto;
-        margin-left: auto;
-      }
-      
-      .search input[type="text"] {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        width: 150px;
-        margin-bottom: auto;
-      }
-      
-      .search button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 6px 10px;
-        background-color: #ccc;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-bottom: auto;
-      }
-      
-      .category-dropdown {
-        margin-top: 0 auto;
-        margin-left: 20px;
-      }
-      
-      .category-dropdown select {
-        margin-left: auto;
-        padding: 5px 25px;
-        border:1px solid #ccc;
-        border-radius: 10px;
-        background-color: #fff;
-        color: #333;
-        font-size: 16px;
-
-      }
-      
-      .loginButton {
-        margin-left: auto;
-        margin-bottom: auto;
-      }
-      
-      .userName {
-        position: relative;
-        margin-left: auto;
-        margin-left: 20px;
-        font-size: 16px;
-        margin-bottom: auto;
-      }
-
-      
-      @media screen and (min-width: 480px) and (max-width: 769px) {
- 
-        .search, 
-        .loginButton,
-        .userName {
-          display: none;
-        }
-      }
-      
-
-
-
-   
+  .search,
+  .loginButton,
+  .userName {
+    display: none;
+  }
+}

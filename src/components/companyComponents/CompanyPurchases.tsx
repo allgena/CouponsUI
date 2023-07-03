@@ -7,17 +7,18 @@ import { ActionType } from "../redux/action-type";
 import { AppState } from "../redux/app-state";
 import CompanyComponent from "./CompanyComponent";
 
-
 function CompanyPurchases() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 12;
   let dispatch = useDispatch();
-  let userCompanyId = useSelector((state: AppState) => state.logInData.companyId);
+  let userCompanyId = useSelector(
+    (state: AppState) => state.logInData.companyId
+  );
 
   useEffect(() => {
     getPurchases();
   }, [pageNumber]);
-  
+
   let purchases = useSelector((state: AppState) => state.purchases);
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText === "") {
@@ -25,7 +26,7 @@ function CompanyPurchases() {
 
   async function getPurchases() {
     let url = `http://localhost:8080/purchases/company?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}&companyId=${userCompanyId}`;
-  
+
     let response = await axios.get(url);
     let purchasesArray = response.data;
     dispatch({
@@ -70,7 +71,7 @@ function CompanyPurchases() {
             .filter((purchase: any) => purchase.couponName.includes(subText))
             .map((purchase, index) => (
               <tr key={purchase.id}>
-                <td>{index+1}</td>
+                <td>{index + 1}</td>
                 <td>{purchase.customerName}</td>
                 <td>{purchase.couponName}</td>
                 <td>{purchase.companyName}</td>

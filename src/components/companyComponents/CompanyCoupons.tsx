@@ -10,20 +10,21 @@ import { AppState } from "../redux/app-state";
 import ICoupon from "../models/ICoupon";
 import { useNavigate } from "react-router-dom";
 
-
 function CompanyCoupons() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
   let navigate = useNavigate();
-  let userCompanyId = useSelector((state: AppState) => state.logInData.companyId);
+  let userCompanyId = useSelector(
+    (state: AppState) => state.logInData.companyId
+  );
 
   useEffect(() => {
     getAllCoupons(pageNumber, amountPerPage);
   }, [pageNumber]);
 
   let coupons = useSelector((state: AppState) => state.coupons);
-let subText = useSelector((state: AppState) => state.searchValue);
+  let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
   }
 
@@ -38,11 +39,10 @@ let subText = useSelector((state: AppState) => state.searchValue);
   }
 
   function onDeleteClicked(couponId: number) {
-    
     axios
       .delete(`http://localhost:8080/coupons/${couponId}`)
       .then(() => {
-        getAllCoupons(pageNumber, amountPerPage); 
+        getAllCoupons(pageNumber, amountPerPage);
         alert("Coupon deleted successfully!");
         navigate("/company/coupons");
       })
@@ -64,74 +64,78 @@ let subText = useSelector((state: AppState) => state.searchValue);
       payload: { coupon: coupon },
     });
     navigate("/company/coupons/update");
-    }
-  
-  
+  }
+
   function onNextClicked() {
-        pageNumber++;
-        setPageNumber(pageNumber);
-      }
-    function onBackClicked() {
-        pageNumber--;
-        setPageNumber(pageNumber);
-      }
-    
-      return (
-        <div className="cards-container">
-          <CompanyComponent />
-          <h3>Coupons</h3>
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>name</th>
-                <th>price</th>
-                <th>description</th>
-                <th>category</th>
-                <th>expiration date</th>
-                <th>Edit</th>
-                <th>Delete</th>
+    pageNumber++;
+    setPageNumber(pageNumber);
+  }
+  function onBackClicked() {
+    pageNumber--;
+    setPageNumber(pageNumber);
+  }
+
+  return (
+    <div className="cards-container">
+      <CompanyComponent />
+      <h3>Coupons</h3>
+      <table className="admin-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>price</th>
+            <th>description</th>
+            <th>category</th>
+            <th>expiration date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {coupons
+            .filter((coupon) => coupon.couponName.includes(subText))
+            .map((coupon, index) => (
+              <tr key={coupon.couponId}>
+                <td>{index + 1}</td>
+                <td>{coupon.couponName}</td>
+                <td>{coupon.price}</td>
+                <td>{coupon.description}</td>
+                <td>{coupon.category}</td>
+                <td>{coupon.endDate}</td>
+                <td>
+                  <EditIcon
+                    className="edit-icon"
+                    onClick={() => onUpdateCoupon(coupon)}
+                  />
+                </td>
+                <td>
+                  <DeleteForeverIcon
+                    className="delete-icon"
+                    onClick={() => onDeleteClicked(coupon.couponId)}
+                  />
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {coupons
-                .filter((coupon) => coupon.couponName.includes(subText))
-                .map((coupon, index) => (
-                  <tr  key={coupon.couponId}>
-                    <td>{index+1}</td>
-                    <td>{coupon.couponName}</td>
-                    <td>{coupon.price}</td>
-                    <td>{coupon.description}</td>
-                    <td>{coupon.category}</td>
-                    <td>{coupon.endDate}</td>
-                    <td>
-                      <EditIcon className="edit-icon"onClick={() => onUpdateCoupon(coupon)}/>
-                    </td>
-                    <td>
-                      <DeleteForeverIcon className="delete-icon" onClick={() => onDeleteClicked(coupon.couponId)}/>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-          <div>
-            <input
-              type="button"
-              disabled={pageNumber == 1}
-              value="back"
-              onClick={() => onBackClicked()}
-            />
-            <input
-              type="button"
-              disabled={coupons.length < amountPerPage}
-              value="next"
-              onClick={() => onNextClicked()}
-            />
-            <h5>Page: {pageNumber}</h5>
-          </div>
-        </div>
-      );
-    }
-  
-    export default CompanyCoupons;
-    
+            ))}
+        </tbody>
+      </table>
+      <div>
+        <input
+          type="button"
+          disabled={pageNumber == 1}
+          value="back"
+          onClick={() => onBackClicked()}
+        />
+        <input
+          type="button"
+          disabled={coupons.length < amountPerPage}
+          value="next"
+          onClick={() => onNextClicked()}
+        />
+        <h5>Page: {pageNumber}</h5>
+      </div>
+    </div>
+  );
+}
+
+export default CompanyCoupons;

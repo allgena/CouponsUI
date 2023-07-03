@@ -50,7 +50,6 @@ function Header() {
   }
   return (
     <div className="components">
-
       <div className="logo">
         <a href="/coupons">G.A.C.</a>
       </div>

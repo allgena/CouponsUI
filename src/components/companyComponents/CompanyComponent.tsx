@@ -33,7 +33,6 @@ function CompanyComponent() {
   }
 
   function onCreateCouponClick() {
-    debugger;
     if (userType !== "COMPANY") {
       navigate("/login");
     } else navigate("/company/coupons/create");

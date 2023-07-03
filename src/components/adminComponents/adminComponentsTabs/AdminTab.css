@@ -1,29 +1,28 @@
-
-
 .admin-table {
   position: relative;
   display: inline;
   border: 2px solid wheat;
-  padding-top: 9px;
- }
+  padding-top: 7px;
+
+
+}
 
 th,
 td {
   border: 1px solid wheat;
-  padding: 3px 40px;
+  padding: 1px 40px;
   color: white;
-  
-}
 
+}
 
 .cards-container {
   display: inline;
   height: 100%;
   font-weight: 500;
-  margin-top: 20px 20px; 
+  margin-top: 20px 20px;
 }
 
-.cards-container >.h4 {
+.cards-container>.h4 {
 
   font-size: 20px;
   text-align: center;
@@ -39,8 +38,9 @@ td {
 h5 {
   color: white;
 }
-h3{
-  margin-top:3px;
+
+h3 {
+  margin-top: 3px;
   color: wheat;
 }
 

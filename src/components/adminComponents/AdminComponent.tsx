@@ -3,10 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../redux/app-state";
 import "./AdminComponent.css";
-import axios from "axios";
-import { ActionType } from "../redux/action-type";
-import { useEffect } from "react";
-
 
 function AdminComponent() {
   let coupons = useSelector((state: AppState) => state.coupons);
@@ -14,7 +10,6 @@ function AdminComponent() {
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
- 
 
   function onCouponsButtonClick() {
     if (userType !== "ADMIN") {
@@ -43,7 +38,6 @@ function AdminComponent() {
     } else navigate("/admin/purchases");
   }
 
-
   function onCreateCompanyClick() {
     if (userType !== "ADMIN") {
       navigate("/login");
@@ -51,7 +45,6 @@ function AdminComponent() {
   }
 
   return (
- 
     <div className="admin-page">
       <h4>
         Hello, {useSelector((state: AppState) => state.logInData.userName)}
@@ -82,7 +75,6 @@ function AdminComponent() {
         />
       </div>
     </div>
-  
   );
 }
 

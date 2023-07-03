@@ -1,58 +1,58 @@
-
-
-
-.admin-page{
+.admin-page {
         padding-top: 10px;
         display: flex;
         justify-items: left;
         margin-left: 80px;
-      
+
 }
-.company-page{
+
+.company-page {
         padding-top: 10px;
-        display: flex; 
+        display: flex;
         justify-items: left;
         margin-left: 250px;
 }
-.company-page >h4{
+
+.company-page>h4 {
         font-size: 20px;
         margin-left: 130px;
         color: whitesmoke;
 }
 
-.admin-page >h4{
-       font-size: 20px;
+.admin-page>h4 {
+        font-size: 20px;
         margin-left: 120px;
         color: whitesmoke;
 
 }
 
-.sections-buttons{
-      margin-top: 0px;
-      margin-left: 90px;
-      display: flex;
-      align-items:center;
-    
-     }
+.sections-buttons {
+        margin-top: 0px;
+        margin-left: 90px;
+        display: flex;
+        align-items: center;
+
+}
 
 
-.sections-buttons [ type="button"]{
+.sections-buttons [ type="button"] {
         display: flex;
         display: inline-block;
         border-radius: 20px;
         padding: 5px 20px;
-      
+
         margin-right: 20px;
         cursor: pointer;
         border: 1px solid transparent;
         transition: all 00ms ease;
-  
+
 }
+
 .sections-buttons :hover {
         color: red;
         transform: scale(1.1);
 }
 
-.admin-page >h4{
+.admin-page>h4 {
         font-size: 18px;
 }

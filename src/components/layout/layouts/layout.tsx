@@ -32,7 +32,6 @@ function Layout() {
 
         <main className="main">
           <Routes>
-          
             <Route path="" element={<Home />} />
             <Route path="/coupons" element={<CustomerCouponsContainer />} />
             <Route path="/company" element={<CompanyComponent />} />
