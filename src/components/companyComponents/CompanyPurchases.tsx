@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../adminComponents/adminComponentsTabs/AdminTab.css";
-import AdminComponent from "../adminComponents/AdminComponent";
 import { ActionType } from "../redux/action-type";
 import { AppState } from "../redux/app-state";
 import CompanyComponent from "./CompanyComponent";
@@ -11,10 +10,7 @@ function CompanyPurchases() {
   let [pageNumber, setPageNumber] = useState(1);
   let amountPerPage: number = 12;
   let dispatch = useDispatch();
-  let userCompanyId = useSelector(
-    (state: AppState) => state.logInData.companyId
-  );
-
+  
   useEffect(() => {
     getPurchases();
   }, [pageNumber]);
@@ -25,7 +21,7 @@ function CompanyPurchases() {
   }
 
   async function getPurchases() {
-    let url = `http://localhost:8080/purchases/company?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}&companyId=${userCompanyId}`;
+    let url = `http://localhost:8080/purchases/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
 
     let response = await axios.get(url);
     let purchasesArray = response.data;

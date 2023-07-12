@@ -14,6 +14,7 @@ export class AppState {
     userType: "",
     companyId: 0,
   };
+    
   public searchValue: string = "";
   public filterredCoupons: ICoupon[] = [];
   public users: IUser[] = [];

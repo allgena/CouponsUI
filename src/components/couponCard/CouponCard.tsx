@@ -9,7 +9,6 @@ import { AppState } from "../redux/app-state";
 
 function CouponCard(coupon: ICoupon) {
   let userType = useSelector((state: AppState) => state.logInData.userType);
-  let customerName = useSelector((state: AppState) => state.logInData.userName);
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
@@ -38,7 +37,7 @@ function CouponCard(coupon: ICoupon) {
       navigate("/login");
     }
     try {
-      const url = `http://localhost:8080/purchases?customerName=${customerName}&couponId=${id}`;
+      const url = `http://localhost:8080/purchases?&couponId=${id}`;
       let response = await axios.post(url);
       let couponToPurchases = id;
       dispatch({
@@ -67,7 +66,7 @@ function CouponCard(coupon: ICoupon) {
             <h4>{coupon.couponName}</h4>
             <p>Caterory : {coupon.category}</p>
             <p>Company : {coupon.companyName}</p>
-            <p>Discription : {coupon.description}</p>
+            <p>Disc : {coupon.description}</p>
             <p>
               Price : <a>{coupon.price}$</a>
             </p>

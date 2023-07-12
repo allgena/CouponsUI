@@ -41,7 +41,7 @@ export function reduce(
     case ActionType.LogInData:
       newAppState.logInData = action.payload.successfulLoginData;
       break;
-
+  
     case ActionType.ChangeCouponProps:
       newAppState.coupon = action.payload.coupon;
       break;

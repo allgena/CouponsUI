@@ -59,7 +59,9 @@ function CustomerCouponsContainer() {
   return (
     <div className="customer-container">
       <div className="coupons-container">
-        {coupons.map((coupon: ICoupon) => (
+        {coupons
+        .filter((coupon) => coupon.couponName.includes(subText))
+        .map((coupon: ICoupon) => (
           <CouponComponent
             key={coupon.couponId}
             couponId={coupon.couponId}

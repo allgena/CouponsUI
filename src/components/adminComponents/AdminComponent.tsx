@@ -57,11 +57,11 @@ function AdminComponent() {
           value="Companies"
           onClick={onCompaniesButtonClick}
         />
-        <input
+        {/* <input
           type="button"
           value="Customers"
           onClick={onCustomersButtonClick}
-        />
+        /> */}
         <input
           type="button"
           value="Purchases"

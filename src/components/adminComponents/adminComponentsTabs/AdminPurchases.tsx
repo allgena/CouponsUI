@@ -84,7 +84,7 @@ function AdminPurchases() {
       <div>
         <input
           type="button"
-          disabled={pageNumber == 1}
+          disabled={pageNumber === 1}
           value="back"
           onClick={() => onBackClicked()}
         />

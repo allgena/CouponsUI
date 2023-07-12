@@ -86,11 +86,12 @@ function AdminCoupons() {
         <thead>
           <tr>
             <th>#</th>
-            <th>name</th>
-            <th>price</th>
-            <th>description</th>
-            <th>category</th>
-            <th>expiration date</th>
+            <th>Name</th>
+            <th>Comp. name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Expiration date</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -102,6 +103,7 @@ function AdminCoupons() {
               <tr  key={coupon.couponId}>
                 <td>{index+1}</td>
                 <td>{coupon.couponName}</td>
+                <td>{coupon.companyName}</td>
                 <td>{coupon.price}</td>
                 <td>{coupon.description}</td>
                 <td>{coupon.category}</td>

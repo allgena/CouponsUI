@@ -15,9 +15,6 @@ function CompanyCoupons() {
   let amountPerPage: number = 10;
   let dispatch = useDispatch();
   let navigate = useNavigate();
-  let userCompanyId = useSelector(
-    (state: AppState) => state.logInData.companyId
-  );
 
   useEffect(() => {
     getAllCoupons(pageNumber, amountPerPage);
@@ -29,7 +26,7 @@ function CompanyCoupons() {
   }
 
   async function getAllCoupons(pageNumber: number, amountPerPage: number) {
-    let url = `http://localhost:8080/coupons/company?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}&companyId=${userCompanyId}`;
+    let url = `http://localhost:8080/coupons/byPage?pageNumber=${pageNumber}&amountOfItemsPerPage=${amountPerPage}`;
     let response = await axios.get(url);
     let couponsArray = response.data;
     dispatch({
