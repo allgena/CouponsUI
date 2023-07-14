@@ -12,7 +12,6 @@ function CouponCard(coupon: ICoupon) {
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  // let [modalIsOpen, setModalIsOpen] = useState(false);
   let subText = useSelector((state: AppState) => state.searchValue);
   if (subText == "") {
   }

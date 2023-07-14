@@ -71,7 +71,7 @@ function SingleUser(props: IUser) {
           name="name"
           onChange={(event) => setUserName(event.target.value)}
         />{" "}
-        {/* <br /> */}
+  
         <br />
         <label htmlFor="name"> User Type: </label>
         <br />
@@ -87,7 +87,7 @@ function SingleUser(props: IUser) {
           ))}
         </select>
         <br></br>
-        {/* <br></br> */}
+     
         <label htmlFor="companyId"> Phone: </label>
         <br />
         <input
@@ -98,15 +98,10 @@ function SingleUser(props: IUser) {
           onChange={(event) => setPhoneNumber(event.target.value)}
         />{" "}
         <br />
-        {/* <br></br> */}
+     
         <label htmlFor="price">Company Name: </label>
         <br />
-        {/* <input
-          type="text"
-          defaultValue={`${user.companyName}`}
-          name="price"
-          onChange={(event) => setCompanyName(event.target.value)}
-        />{" "} */}
+
         <select
           name="companyName"
           value={companyName}
@@ -118,7 +113,7 @@ function SingleUser(props: IUser) {
             </option>
           ))}
         </select>
-        {/* <br></br> */}
+    
         <br />
         <br />
         <input

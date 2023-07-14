@@ -112,14 +112,6 @@ function CreateCoupon(props: ICoupon) {
             </option>
           ))}
         </select>
-        {/* <input
-          type="text"
-          defaultValue={`${props.category}`}
-          spellCheck="false"
-          name="categoryId"
-          onChange={(event) => setCategory(event.target.value)}
-        />{" "}
-        <br /> */}
         <br />
         <label htmlFor="companyId"> Coupon Image URL: </label>
         <br />

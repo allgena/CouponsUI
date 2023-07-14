@@ -85,7 +85,6 @@ function Login() {
           </div>
           <p id="member">
             Not a member?{" "}
-            {/* "http://localhost:3000/register" */}
             <a id="sign-up" onClick={onRegisterButtonClick}>
            Sign Up
             </a>
